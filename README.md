@@ -173,7 +173,7 @@ Contributions to the website are welcome. Whether you fix a typo, improve access
 
 ## License
 
-2026: © 2025 LithoQuant. All rights reserved.
+Copyright (c) 2024-2026 LithoQuant. All rights reserved. This website and its assets are proprietary.
 
 ---
 

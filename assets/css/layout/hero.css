@@ -61,8 +61,8 @@
   margin-bottom: 14px; animation: fadeInUp 0.7s ease;
   color: #0f172a;
 }
-.litho-text { color: #059669; font-weight: 800; }
-.quant-text { color: #7c3aed; font-weight: 800; }
+.litho-text { color: #0f172a; font-weight: 800; }
+.quant-text { color: #059669; font-weight: 800; }
 .hero-subtitle {
   font-size: 1.25rem; font-weight: 700; color: #1e293b;
   margin-bottom: 10px; line-height: 1.45; animation: fadeInUp 0.7s ease 0.1s backwards;
