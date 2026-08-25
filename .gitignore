@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp
+.tmp/
+temp/
+
+# Dependencies (if npm used later)
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+
+# Cache backup (keep original css backup out of repo)
+assets/css/style.css.bak

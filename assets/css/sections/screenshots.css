@@ -1,0 +1,124 @@
+/* ===================================
+   Screenshots Section
+   =================================== */
+.screenshots {
+  background-color: var(--light-bg-2);
+}
+
+/* Featured Screenshot */
+.featured-screenshot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  background: var(--light-bg-3);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.screenshot-image {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.screenshot-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.screenshot-description h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.screenshot-description h3 i {
+  color: var(--primary-light);
+  font-size: 1.5rem;
+}
+
+.screenshot-description p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-list li i {
+  color: var(--secondary-color);
+  font-size: 1rem;
+}
+
+/* Screenshots Grid */
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.screenshot-card {
+  background: var(--light-bg-3);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.screenshot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.screenshot-card-image {
+  height: auto;
+  min-height: 300px;
+  width: 100%;
+  background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.screenshot-card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-height: 400px;
+}
+
+.screenshot-card-content {
+  padding: 1.5rem;
+}
+
+.screenshot-card-content h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.screenshot-card-content p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+

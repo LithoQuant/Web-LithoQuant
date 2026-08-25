@@ -1,0 +1,22 @@
+/* ===================================
+   Page Header (Gallery, News, Developer)
+   =================================== */
+.page-header {
+  padding: 150px 0 80px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,47 @@
+/* ===================================
+   Capabilities Section
+   =================================== */
+.capabilities-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.capability-category {
+  background: var(--light-bg-2);
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--primary-light);
+}
+
+.capability-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.capability-header i {
+  font-size: 2rem;
+  color: var(--primary-light);
+}
+
+.capability-header h3 {
+  color: var(--text-primary);
+}
+
+.capability-category ul {
+  list-style: none;
+}
+
+.capability-category li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.capability-category li i {
+  color: var(--secondary-color);
+}

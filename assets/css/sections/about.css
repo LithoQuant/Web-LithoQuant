@@ -1,0 +1,24 @@
+/* ===================================
+   About Section
+   =================================== */
+.about {
+  background-color: var(--light-bg-2);
+}
+
+.about-text h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}

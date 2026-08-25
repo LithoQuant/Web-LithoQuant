@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: sitemap.xml
+# Sitemap
+Sitemap: https://lithoquant.github.io/sitemap.xml

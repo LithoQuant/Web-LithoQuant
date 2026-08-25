@@ -1,16 +1,4 @@
 #!/bin/bash
-
-echo "========================================"
-echo "  LithoQuant Website - Local Preview"
-echo "========================================"
-echo ""
-echo "Starting local web server..."
-echo ""
-echo "Website akan tersedia di:"
-echo "  http://localhost:8000"
-echo ""
-echo "Tekan Ctrl+C untuk stop server"
-echo "========================================"
-echo ""
-
-python3 -m http.server 8000
+# Wrapper for backward compatibility - delegates to scripts/start-server.sh
+echo "[DEPRECATED] start-server.sh at root is deprecated. Use scripts/start-server.sh"
+exec "$(dirname "$0")/scripts/start-server.sh"
