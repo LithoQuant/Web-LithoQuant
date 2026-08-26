@@ -3,295 +3,304 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="LithoQuant Developer Team - Current Team, Past Contributors, Scientific Advisors, Partners"
-    />
+    <meta name="description" content="The people behind LithoQuant - current team, past contributors, scientific advisors, and partners." />
+    <meta name="theme-color" content="#050c17" />
     <title>Developer - LithoQuant</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/branding/icons.svg" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260826" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
       <div class="container">
         <div class="nav-wrapper">
-          <div class="logo">
-            <img
-              src="assets/images/branding/logo.svg"
-              alt="LithoQuant Logo"
-              style="height: 75px; margin-right: 10px"
-            />
-          </div>
+          <a class="logo" href="index.html" aria-label="LithoQuant home">
+            <img class="logo-badge" src="assets/images/branding/icons.svg" alt="" />
+            <span>
+              <span class="logo-word">Litho<b>Quant</b></span>
+              <span class="logo-tag">Petrophysics · Quantified</span>
+            </span>
+          </a>
           <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="index.html#features" class="nav-link">Features</a></li>
-            
+            <li><a href="index.html#showcase" class="nav-link">Showcase</a></li>
             <li><a href="gallery.html" class="nav-link">Gallery</a></li>
             <li><a href="news.html" class="nav-link">News</a></li>
-            <li>
-              <a href="developer.html" class="nav-link active">Developer</a>
-            </li>
-            <li><a href="index.html#download" class="nav-link">Contact</a></li>
+            <li><a href="developer.html" class="nav-link active">Developer</a></li>
           </ul>
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <a href="index.html#download" class="navbar-cta">Request Demo <i class="fas fa-arrow-right"></i></a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
     </nav>
 
-    <!-- Developer Header -->
-    <section class="page-header">
-      <div class="container">
-        <h1>Development Team</h1>
-        <p>Meet the people behind LithoQuant</p>
-      </div>
-    </section>
-
-    <!-- Developer Tabs -->
-    <section class="developer-section">
-      <div class="container">
-        <!-- Tab Navigation -->
-        <div class="tab-navigation">
-          <button class="tab-btn active" data-tab="current">
-            Current Team
-          </button>
-          <button class="tab-btn" data-tab="past">Past Contributors</button>
-          <button class="tab-btn" data-tab="advisors">
-            Scientific Advisors
-          </button>
-          <button class="tab-btn" data-tab="partners">
-            Partners & Support
-          </button>
+    <main id="main">
+      <section class="page-header">
+        <div class="bg-contours" aria-hidden="true"></div>
+        <div class="container">
+          <span class="page-crumb">
+            <a href="index.html">Surface</a>
+            <i class="fas fa-caret-down"></i>
+            <span>13,500 ft</span>
+          </span>
+          <h1>The <span style="color: var(--teal-bright)">descent crew</span></h1>
+          <p>Developers, advisors, and partners - the people who dig LithoQuant.</p>
         </div>
+      </section>
 
-        <!-- Tab Content -->
-        <div class="tab-content">
-          <!-- Current Team Tab -->
+      <section>
+        <div class="container">
+          <div class="tab-navigation" role="tablist" aria-label="Team groups">
+            <button class="tab-btn active" data-tab="current">Current Team</button>
+            <button class="tab-btn" data-tab="past">Past Contributors</button>
+            <button class="tab-btn" data-tab="advisors">Scientific Advisors</button>
+            <button class="tab-btn" data-tab="partners">Partners &amp; Support</button>
+          </div>
+
+          <!-- Current team -->
           <div class="tab-pane active" id="current">
-            <h2>Current Development Team</h2>
+            <h2 class="pane-title">Current development team</h2>
+            <p class="tab-intro">Four engineers, one instrument - built at Geophysical Engineering, ITS.</p>
             <div class="team-grid">
-              <div class="team-member-card">
+              <article class="member-card reveal">
                 <div class="member-avatar">
-                  <i class="fas fa-user"></i>
+                  <span class="avatar av-1">MU</span>
+                  <span class="member-status" title="Active"></span>
                 </div>
                 <h3>M Ulin Nuha Abduh</h3>
                 <p class="member-role">Developer</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
                 <div class="member-contact">
-                  <a
-                    href="https://www.linkedin.com/in/mulinnuhaabduh/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+                  <a href="https://www.linkedin.com/in/mulinnuhaabduh/" target="_blank" rel="noopener" aria-label="LinkedIn - M Ulin Nuha Abduh">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-              </div>
+              </article>
 
-              <div class="team-member-card">
+              <article class="member-card reveal" style="--d: 0.08s">
                 <div class="member-avatar">
-                  <i class="fas fa-user"></i>
+                  <span class="avatar av-2">MA</span>
+                  <span class="member-status" title="Active"></span>
                 </div>
                 <h3>M Abdul Aziz Nashrullah</h3>
                 <p class="member-role">Developer</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
                 <div class="member-contact">
-                  <a
-                    href="https://www.linkedin.com/in/m-abdul-aziz-nashrullah-1207171a9/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+                  <a href="https://www.linkedin.com/in/m-abdul-aziz-nashrullah-1207171a9/" target="_blank" rel="noopener" aria-label="LinkedIn - M Abdul Aziz Nashrullah">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-              </div>
+              </article>
 
-              <div class="team-member-card">
+              <article class="member-card reveal" style="--d: 0.16s">
                 <div class="member-avatar">
-                  <i class="fas fa-user"></i>
+                  <span class="avatar av-3">MN</span>
+                  <span class="member-status" title="Active"></span>
                 </div>
                 <h3>Muhammad Naufal Hisyam</h3>
                 <p class="member-role">Developer</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
                 <div class="member-contact">
-                  <a
-                    href="https://www.linkedin.com/in/muhammadnaufalhisyam/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+                  <a href="https://www.linkedin.com/in/muhammadnaufalhisyam/" target="_blank" rel="noopener" aria-label="LinkedIn - Muhammad Naufal Hisyam">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-              </div>
+              </article>
 
-              <div class="team-member-card">
+              <article class="member-card reveal" style="--d: 0.24s">
                 <div class="member-avatar">
-                  <i class="fas fa-user"></i>
+                  <span class="avatar av-4">BG</span>
+                  <span class="member-status" title="Active"></span>
                 </div>
                 <h3>Bram Gamaliel Sitompul</h3>
                 <p class="member-role">Developer</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
                 <div class="member-contact">
-                  <a
-                    href="https://www.linkedin.com/in/bramsitompul/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+                  <a href="https://www.linkedin.com/in/bramsitompul/" target="_blank" rel="noopener" aria-label="LinkedIn - Bram Gamaliel Sitompul">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
 
-          <!-- Past Contributors Tab -->
+          <!-- Past contributors -->
           <div class="tab-pane" id="past">
-            <h2>Past Contributors</h2>
-            <p class="tab-intro">
-              We are grateful to all past contributors who helped shape
-              LithoQuant.
-            </p>
+            <h2 class="pane-title">Past contributors</h2>
+            <p class="tab-intro">We are grateful to everyone who helped shape LithoQuant along the way.</p>
             <div class="team-grid">
-              <div class="team-member-card">
+              <article class="member-card">
                 <div class="member-avatar">
-                  <i class="fas fa-user"></i>
+                  <span class="avatar av-5">OJ</span>
+                  <span class="member-status past" title="Past contributor"></span>
                 </div>
                 <h3>Omar Abdul Jabar</h3>
                 <p class="member-role">Developer</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
-                <p class="member-period">Sept 2024 - Mei 2025</p>
+                <p class="member-period">Sept 2024 - May 2025</p>
                 <div class="member-contact">
-                  <a
-                    href="https://www.linkedin.com/in/omar-abdul-jabar-b63559249/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+                  <a href="https://www.linkedin.com/in/omar-abdul-jabar-b63559249/" target="_blank" rel="noopener" aria-label="LinkedIn - Omar Abdul Jabar">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
 
-          <!-- Scientific Advisors Tab -->
+          <!-- Advisors -->
           <div class="tab-pane" id="advisors">
-            <h2>Scientific Advisors</h2>
-            <p class="tab-intro">
-              Expert advisors guiding our development and research direction.
-            </p>
+            <h2 class="pane-title">Scientific advisors</h2>
+            <p class="tab-intro">Experts guiding development and research direction.</p>
             <div class="team-grid">
-              <div class="team-member-card">
+              <article class="member-card">
                 <div class="member-avatar">
-                  <i class="fas fa-user-tie"></i>
+                  <span class="avatar av-2">KP</span>
+                  <span class="member-status advisor" title="Advisor"></span>
                 </div>
                 <h3>Kadek Hendrawan Palgunadi, S.T., M.Sc., Ph.D.</h3>
-                <p class="member-role">
-                  Lead Scientific Advisor & Project Manager
-                </p>
+                <p class="member-role">Lead Advisor &amp; Project Manager</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
                 <p class="member-expertise">Expertise: Seismologist</p>
                 <div class="member-contact">
-                  <a
-                    href="https://www.linkedin.com/in/kadek-hendrawan-palgunadi-b920918a/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+                  <a href="https://www.linkedin.com/in/kadek-hendrawan-palgunadi-b920918a/" target="_blank" rel="noopener" aria-label="LinkedIn - Kadek Hendrawan Palgunadi">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-              </div>
+              </article>
 
-              <div class="team-member-card">
+              <article class="member-card">
                 <div class="member-avatar">
-                  <i class="fas fa-user-tie"></i>
+                  <span class="avatar av-1">EK</span>
+                  <span class="member-status advisor" title="Advisor"></span>
                 </div>
                 <h3>Ir. Eki Komara, S.T., M.T.</h3>
                 <p class="member-role">Scientific Advisor</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
-                <p class="member-expertise">Expertise: Petrophysics & Well Log Analysis</p>
-              </div>
+                <p class="member-expertise">Expertise: Petrophysics &amp; Well Log Analysis</p>
+              </article>
 
-              <div class="team-member-card">
+              <article class="member-card">
                 <div class="member-avatar">
-                  <i class="fas fa-user-tie"></i>
+                  <span class="avatar av-3">WU</span>
+                  <span class="member-status advisor" title="Advisor"></span>
                 </div>
                 <h3>Dr. Ir. Widya Utama, DEA., IPU., ASEAN Eng.</h3>
                 <p class="member-role">Scientific Advisor</p>
                 <p class="member-affiliation">Geophysical Engineering, ITS</p>
-                <p class="member-expertise">Expertise: Geophysics & Engineering</p>
-              </div>
+                <p class="member-expertise">Expertise: Geophysics &amp; Engineering</p>
+              </article>
             </div>
           </div>
 
-          <!-- Partners & Support Tab -->
+          <!-- Partners -->
           <div class="tab-pane" id="partners">
-            <h2>Partners & Support</h2>
-            <p class="tab-intro">
-              We are grateful for the support of our partners and institutions.
-            </p>
-
+            <h2 class="pane-title">Partners &amp; support</h2>
+            <p class="tab-intro">LithoQuant is built with the help of institutions that believe in better tools.</p>
             <div class="partners-grid">
-              <div class="partner-card">
-                <div class="partner-logo-rectangle">
-                  <img src="assets/images/partners/tecrube.png" alt="Tecrube Foundation" />
+              <article class="partner-card">
+                <div class="partner-logo">
+                  <img src="assets/images/partners/tecrube.png" alt="Tecrube Foundation logo" loading="lazy" />
                 </div>
                 <h3>Tecrube Foundation</h3>
-                <p>Supporting Partner</p>
-                <p class="partner-description">
-                  Tecrube Foundation supports LithoQuant development by
-                  providing resources, guidance, and infrastructure to advance
-                  petrophysical analysis tools for education and research.
+                <p class="partner-role">Supporting Partner</p>
+                <p>
+                  Tecrube Foundation supports LithoQuant development by providing resources,
+                  guidance, and infrastructure to advance petrophysical analysis tools for
+                  education and research.
                 </p>
-              </div>
+              </article>
             </div>
-
-            <div class="support-acknowledgment">
-              <h3>Acknowledgments</h3>
+            <div class="acknowledge">
               <p>
-                LithoQuant is developed with support from Institut Teknologi
-                Sepuluh Nopember through the Geophysical Engineering program. We
-                thank all our partners, advisors, and contributors for their
-                valuable support and guidance.
+                <i class="fas fa-hands-holding-circle"></i>
+                LithoQuant is developed with support from Institut Teknologi Sepuluh Nopember
+                through the Geophysical Engineering program. We thank all partners, advisors,
+                and contributors for their valuable support and guidance.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-section">
-            <h3>
-              <img
-                src="assets/images/branding/logo.svg"
-                alt="LithoQuant Logo"
-                style="height: 90px; vertical-align: middle; margin-right: 8px"
-              />
-            </h3>
-            <p>Educational and Commercial Petrophysical Analysis Software</p>
+          <div class="footer-brand">
+            <a class="logo" href="index.html" aria-label="LithoQuant home">
+              <img class="logo-badge" src="assets/images/branding/icons.svg" alt="" />
+              <span>
+                <span class="logo-word">Litho<b>Quant</b></span>
+                <span class="logo-tag">Petrophysics · Quantified</span>
+              </span>
+            </a>
+            <p>Educational and commercial petrophysical analysis software. From LAS to decision in minutes.</p>
+            <div class="social-links">
+              <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="mailto:kadek.palgunadi@its.ac.id" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
           <div class="footer-section">
-            <h4>Quick Links</h4>
+            <h4>Explore</h4>
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#showcase">Showcase</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="developer.html">Developer</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>Contact</h4>
+            <h4>Get started</h4>
             <ul>
-              <li><i class="fas fa-envelope"></i> kadek.palgunadi@its.ac.id</li>
+              <li><a href="mailto:kadek.palgunadi@its.ac.id?subject=Request Demo LithoQuant">Request demo</a></li>
+              <li><a href="mailto:kadek.palgunadi@its.ac.id?subject=Request Trial LithoQuant">30-day trial</a></li>
+              <li><a href="index.html#licensing">Licensing</a></li>
+              <li><a href="index.html#about">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:kadek.palgunadi@its.ac.id">kadek.palgunadi@its.ac.id</a>
+              </li>
+              <li>
+                <i class="fas fa-university"></i>
+                <span>Geophysical Engineering, ITS, Surabaya</span>
+              </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 LithoQuant. All rights reserved.</p>
+          <p>&copy; 2024-2026 LithoQuant. All rights reserved.</p>
+          <span class="fb-depth"><i class="fas fa-caret-down"></i> Total depth 15,000 ft</span>
         </div>
       </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/tabs.js"></script>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="comfort-bar">
+      <button id="comfort-toggle" class="comfort-btn" aria-pressed="false" title="Reduce motion">
+        <i class="fas fa-leaf"></i> <span>Calm</span>
+      </button>
+    </div>
+
+    <script src="assets/js/script.js?v=20260826"></script>
   </body>
 </html>

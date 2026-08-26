@@ -1,23 +1,15 @@
-/* LithoQuant Main Stylesheet - Modular Imports */
-/* Auto-generated from original style.css - edit modules instead */
-/* Original order preserved to maintain cascade */
+/* ============================================================
+   LithoQuant - Main Stylesheet
+   Theme: "The Descent" - scrolling the page is descending a
+   wellbore. Stratigraphic dividers, depth rail, log-grid
+   ambience. Palette from the brand mark.
+   Edit modules instead of this file.
+   ============================================================ */
 
 @import url("base/variables.css");
-@import url("base/typography.css");
-@import url("layout/navbar.css");
+@import url("base/base.css");
+@import url("components/navbar.css");
+@import url("components/footer.css");
 @import url("layout/hero.css");
-@import url("components/section-header.css");
-@import url("sections/features.css");
-@import url("sections/capabilities.css");
-@import url("sections/screenshots.css");
-@import url("sections/download.css");
-@import url("sections/about.css");
-@import url("layout/footer.css");
-@import url("base/responsive.css");
-@import url("pages/page-header.css");
-@import url("pages/gallery.css");
-@import url("pages/news.css");
-@import url("pages/developer.css");
-@import url("components/bento.css");
-
-/* Legacy original backed up as style.css.bak */
+@import url("layout/sections.css");
+@import url("pages/pages.css");

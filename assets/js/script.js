@@ -1,231 +1,343 @@
-// ===================================
-// LithoQuant - Main Script (Bento Refactor - cleaned)
-// ===================================
-document.addEventListener('DOMContentLoaded', function () {
-  const navbar = document.getElementById('navbar');
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+/* ============================================================
+   LithoQuant - main.js
+   Navbar, scroll systems (depth rail, progress, reveals),
+   animated counters, live ticker, showcase tabs, lightbox,
+   greeting, calm mode. No dependencies.
+   ============================================================ */
 
-  // Navbar scroll effect
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 50) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  });
+(function () {
+  "use strict";
 
-  // Mobile menu toggle (guard for pages without hamburger)
+  const doc = document.documentElement;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ----------------------------------------------------------
+     1. Navbar: scrolled state + active link + mobile menu
+     ---------------------------------------------------------- */
+  const navbar = document.getElementById("navbar");
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  function onScrollNav() {
+    if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 24);
+  }
+
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
+    hamburger.addEventListener("click", () => {
+      const open = navMenu.classList.toggle("open");
+      hamburger.classList.toggle("active", open);
+      hamburger.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
     });
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
+    navMenu.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        hamburger.classList.remove("active");
+        document.body.style.overflow = "";
+      })
+    );
+  }
+
+  /* ----------------------------------------------------------
+     2. Depth rail (signature): scroll progress as measured depth
+     ---------------------------------------------------------- */
+  const rail = document.getElementById("depth-rail");
+  const railFill = rail ? rail.querySelector(".rail-fill") : null;
+  const railReadout = rail ? rail.querySelector(".rail-readout") : null;
+  const TD_FT = 15000; // total depth the page represents
+
+  function fmtFt(v) {
+    return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " FT";
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const max = doc.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      if (railFill) railFill.style.height = (p * 100).toFixed(2) + "%";
+      if (railReadout) railReadout.textContent = fmtFt(p * TD_FT);
+      if (rail) rail.classList.toggle("visible", window.scrollY > 300);
+      if (backToTop) backToTop.classList.toggle("visible", window.scrollY > 700);
+      onScrollNav();
+      ticking = false;
     });
   }
 
-  // Active link highlighting
-  const sections = document.querySelectorAll('section[id]');
-  function highlightNavLink() {
-    const pos = window.scrollY + 120;
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.clientHeight;
-      const id = section.getAttribute('id');
-      if (pos >= top && pos < top + height) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}` || link.getAttribute('href') === `index.html#${id}`) {
-            link.classList.add('active');
+  /* ----------------------------------------------------------
+     3. Back to top + calm mode
+     ---------------------------------------------------------- */
+  const backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    backToTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" })
+    );
+  }
+
+  const comfortBtn = document.getElementById("comfort-toggle");
+  if (comfortBtn) {
+    const label = comfortBtn.querySelector("span");
+    const apply = (on) => {
+      doc.classList.toggle("calm", on);
+      comfortBtn.classList.toggle("on", on);
+      if (label) label.textContent = on ? "Calm on" : "Calm";
+      comfortBtn.setAttribute("aria-pressed", String(on));
+    };
+    comfortBtn.addEventListener("click", () => apply(!doc.classList.contains("calm")));
+    if (reduceMotion) apply(true);
+  }
+
+  /* ----------------------------------------------------------
+     4. Scroll reveals (staggered via --d)
+     ---------------------------------------------------------- */
+  const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
           }
         });
-      }
-    });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("in"));
   }
-  if (sections.length) window.addEventListener('scroll', highlightNavLink);
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (!targetId || targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-      }
-    });
-  });
-
-  // Newsletter form - prevent reload (demo)
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const input = this.querySelector('input[type="email"]');
-      const btn = this.querySelector('button');
-      if (!input || !input.value) return;
-      const orig = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> Subscribed';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.innerHTML = orig;
-        btn.disabled = false;
-        input.value = '';
-      }, 2500);
-    });
-  }
-});
-
-// ===================================
-// Scroll Animations (Bento)
-// ===================================
-const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -60px 0px' };
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-in');
-      observer.unobserve(entry.target);
+  /* ----------------------------------------------------------
+     5. Animated counters
+     ---------------------------------------------------------- */
+  const counters = document.querySelectorAll("[data-count]");
+  function animateCount(el) {
+    const target = parseFloat(el.dataset.count);
+    const decimals = (el.dataset.count.split(".")[1] || "").length;
+    const dur = 1600;
+    const t0 = performance.now();
+    function frame(t) {
+      const p = Math.min(1, (t - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(decimals);
+      if (p < 1) requestAnimationFrame(frame);
     }
-  });
-}, observerOptions);
-
-document.addEventListener('DOMContentLoaded', function () {
-  const animated = document.querySelectorAll(
-    '.feature-card, .feature-item, .pillar, .capability-category, .screenshot-card, .featured-screenshot, .news-card, .gallery-item, .team-member-card, .partner-card, .stat-item, .bento-item'
-  );
-  animated.forEach(el => observer.observe(el));
-});
-
-const animStyle = document.createElement('style');
-animStyle.textContent = `
-  .feature-card, .feature-item, .pillar, .capability-category, .screenshot-card, .featured-screenshot,
-  .news-card, .gallery-item, .team-member-card, .partner-card, .stat-item, .bento-item {
-    opacity: 0; transform: translateY(18px);
-    transition: opacity .55s ease, transform .55s cubic-bezier(.16,1,.3,1);
-  }
-  .feature-card.animate-in, .feature-item.animate-in, .pillar.animate-in, .capability-category.animate-in, .screenshot-card.animate-in, .featured-screenshot.animate-in,
-  .news-card.animate-in, .gallery-item.animate-in, .team-member-card.animate-in, .partner-card.animate-in, .stat-item.animate-in, .bento-item.animate-in {
-    opacity: 1; transform: translateY(0);
-  }
-`;
-document.head.appendChild(animStyle);
-
-// ===================================
-// Statistics Counter
-// ===================================
-function animateCounter(element, target, duration = 1600) {
-  let current = 0;
-  const increment = target / (duration / 16);
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      element.textContent = target + '+';
-      clearInterval(timer);
-    } else element.textContent = Math.floor(current) + '+';
-  }, 16);
-}
-const statsObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.dataset.animated) {
-      entry.target.querySelectorAll('.stat-item strong').forEach(stat => {
-        if (stat.dataset.noAnimate) return;
-        const value = parseInt(stat.textContent.trim());
-        if (!isNaN(value)) animateCounter(stat, value);
-      });
-      entry.target.dataset.animated = 'true';
+    if (reduceMotion) {
+      el.textContent = target.toFixed(decimals);
+    } else {
+      requestAnimationFrame(frame);
     }
-  });
-}, { threshold: 0.5 });
+  }
+  if ("IntersectionObserver" in window && counters.length) {
+    const cio = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            animateCount(e.target);
+            cio.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    counters.forEach((el) => cio.observe(el));
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const heroStats = document.querySelector('.hero-stats');
-  if (heroStats) statsObserver.observe(heroStats);
-});
-
-// ===================================
-// Dynamic Comfort - scroll progress, back to top, greeting, ticker, filter, calm
-// ===================================
-document.addEventListener('DOMContentLoaded', () => {
-  // Scroll progress
-  const progress = document.getElementById('scroll-progress');
-  const backToTop = document.getElementById('back-to-top');
-  const onScroll = () => {
-    const h = document.documentElement;
-    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-    if (progress) progress.style.width = scrolled + '%';
-    if (backToTop) {
-      if (window.scrollY > 600) backToTop.classList.add('is-visible');
-      else backToTop.classList.remove('is-visible');
-    }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-  if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // Hero greeting (time-aware)
-  const greetingEl = document.getElementById('hero-greeting');
-  if (greetingEl) {
+  /* ----------------------------------------------------------
+     6. Hero greeting (time-aware, typed)
+     ---------------------------------------------------------- */
+  const greeting = document.getElementById("hero-greeting");
+  if (greeting) {
     const h = new Date().getHours();
-    const greet = h < 11 ? 'Good morning' : h < 15 ? 'Good afternoon' : h < 19 ? 'Good evening' : 'Good evening';
-    greetingEl.innerHTML = `${greet}, explorer - <span>ready to log today?</span>`;
-  }
-
-  // Live ticker (simulated depth stream)
-  const ticker = document.getElementById('ticker-track');
-  if (ticker) {
-    let depth = 2314.5;
-    const mk = () => {
-      depth += (Math.random() * 2 + 0.3);
-      const gr = (30 + Math.random()*40).toFixed(1);
-      const nphi = (0.12 + Math.random()*0.12).toFixed(2);
-      const rhob = (2.25 + Math.random()*0.25).toFixed(2);
-      const span = document.createElement('span');
-      span.textContent = `⭢ ${depth.toFixed(1)}m  GR:${gr}  NPHI:${nphi}  RHOB:${rhob}`;
-      ticker.appendChild(span);
-      // keep 4 visible
-      while (ticker.children.length > 4) ticker.removeChild(ticker.firstChild);
-    };
-    mk(); mk();
-    setInterval(mk, 1600);
-    // respect reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      // slower
+    const word =
+      h < 11 ? "Good morning" : h < 15 ? "Good afternoon" : h < 19 ? "Good evening" : "Working late";
+    const text = "// " + word + ", explorer. Depth awaits.";
+    if (reduceMotion) {
+      greeting.textContent = text;
+    } else {
+      let i = 0;
+      (function type() {
+        if (i <= text.length) {
+          greeting.innerHTML =
+            text.slice(0, i) + '<span class="cursor" aria-hidden="true"></span>';
+          i++;
+          setTimeout(type, 34);
+        } else {
+          greeting.innerHTML = text;
+        }
+      })();
     }
   }
 
-  // Comfort toggle - reduce motion
-  const comfortToggle = document.getElementById('comfort-toggle');
-  const comfortBar = document.getElementById('comfort-bar');
-  const applyCalm = (on) => {
-    document.documentElement.classList.toggle('reduce-motion', on);
-    if (comfortToggle) comfortToggle.classList.toggle('is-active', on);
-    try { localStorage.setItem('litho-calm', on ? '1' : '0'); } catch(e){}
-  };
-  // restore from storage or prefers-reduced-motion
-  let wantCalm = false;
-  try { wantCalm = localStorage.getItem('litho-calm') === '1'; } catch(e){}
-  if (!wantCalm && window.matchMedia('(prefers-reduced-motion: reduce)').matches) wantCalm = true;
-  if (wantCalm) applyCalm(true);
-  if (comfortToggle) comfortToggle.addEventListener('click', () => {
-    const isCalm = document.documentElement.classList.contains('reduce-motion');
-    applyCalm(!isCalm);
-  });
-  // keyboard k for comfort
-  window.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+  /* ----------------------------------------------------------
+     7. Live ticker (simulated log feed)
+     ---------------------------------------------------------- */
+  const tickerTrack = document.getElementById("ticker-track");
+  if (tickerTrack) {
+    const curves = [
+      { k: "GR", u: "API", min: 20, max: 140, d: 1 },
+      { k: "RDEP", u: "ohm.m", min: 0.5, max: 90, d: 2 },
+      { k: "DEN", u: "g/cc", min: 1.9, max: 2.65, d: 3 },
+      { k: "NPHI", u: "v/v", min: 0.05, max: 0.45, d: 3 },
+      { k: "DT", u: "us/ft", min: 55, max: 120, d: 1 },
+      { k: "PHIE", u: "v/v", min: 0.04, max: 0.3, d: 3 },
+      { k: "SW", u: "dec", min: 0.15, max: 0.95, d: 2 },
+      { k: "PERM", u: "mD", min: 0.1, max: 480, d: 1 },
+    ];
+    let depth = 4218;
+    function sample() {
+      depth += Math.floor(Math.random() * 9);
+      const items = [
+        '<span class="tk-depth"><i class="fas fa-arrows-down-to-line" aria-hidden="true"></i> DEPTH ' +
+          fmtFt(depth).replace(" FT", " ft") +
+          "</span>",
+      ];
+      for (let i = 0; i < 4; i++) {
+        const c = curves[Math.floor(Math.random() * curves.length)];
+        const v = (c.min + Math.random() * (c.max - c.min)).toFixed(c.d);
+        const up = Math.random() > 0.5;
+        items.push(
+          "<span>" +
+            c.k +
+            ' <strong class="' +
+            (up ? "tk-up" : "tk-dn") +
+            '">' +
+            (up ? "&#9650;" : "&#9660;") +
+            " " +
+            v +
+            "</strong> " +
+            c.u +
+            "</span>"
+        );
+      }
+      return items.join("");
+    }
+    // duplicate content for a seamless -50% loop
+    const half = document.createElement("span");
+    half.style.display = "inline-flex";
+    half.style.gap = "44px";
+    half.innerHTML = sample() + sample() + sample();
+    tickerTrack.appendChild(half);
+    const half2 = half.cloneNode(true);
+    tickerTrack.appendChild(half2);
+    if (!reduceMotion) {
+      setInterval(() => {
+        half.innerHTML = sample() + sample() + sample();
+      }, 9000);
+    }
+  }
+
+  /* ----------------------------------------------------------
+     8. Hero depth readout (rides the scanline timing)
+     ---------------------------------------------------------- */
+  const scanChip = document.getElementById("scan-chip");
+  if (scanChip && !reduceMotion) {
+    setInterval(() => {
+      scanChip.textContent = fmtFt(3800 + Math.floor(Math.random() * 900));
+    }, 1400);
+  }
+
+  /* ----------------------------------------------------------
+     9. Showcase tabs (home) + developer tabs
+     ---------------------------------------------------------- */
+  function bindTabs(btnSel, paneSel, activeBtn, activePane, onChange) {
+    const btns = document.querySelectorAll(btnSel);
+    const panes = document.querySelectorAll(paneSel);
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btns.forEach((b) => b.classList.remove(activeBtn));
+        panes.forEach((p) => p.classList.remove(activePane));
+        btn.classList.add(activeBtn);
+        const pane = document.getElementById(btn.dataset.tab);
+        if (pane) pane.classList.add(activePane);
+        if (onChange) onChange(btn, pane);
+      });
+    });
+  }
+
+  // showcase with image swap
+  const viewerImg = document.getElementById("viewer-img");
+  const viewerFrame = document.getElementById("viewer-frame");
+  const viewerCap = document.getElementById("viewer-cap");
+  if (viewerImg && viewerFrame) {
+    bindTabs(
+      ".showcase-tab",
+      ".showcase-tab",
+      "active",
+      "active",
+      (btn) => {
+        const src = btn.dataset.img;
+        const cap = btn.dataset.cap;
+        viewerFrame.classList.add("switching");
+        setTimeout(() => {
+          viewerImg.src = src;
+          viewerImg.alt = btn.querySelector("h4").textContent;
+          if (viewerCap && cap) viewerCap.textContent = cap;
+          viewerFrame.classList.remove("switching");
+        }, 220);
+      }
+    );
+  }
+
+  // developer page tabs
+  if (document.querySelector(".tab-navigation")) {
+    bindTabs(".tab-btn", ".tab-pane", "active", "active");
+  }
+
+  /* ----------------------------------------------------------
+     10. Lightbox (showcase expand + gallery)
+     ---------------------------------------------------------- */
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const lbImg = lightbox.querySelector("img");
+    const closeBtn = lightbox.querySelector(".lightbox-close");
+    function open(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || "Preview";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const img = el.tagName === "IMG" ? el : el.querySelector("img");
+        if (img) open(img.src, img.alt);
+      });
+    });
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) close();
+    });
+  }
+
+  /* ----------------------------------------------------------
+     11. Newsletter (demo submit)
+     ---------------------------------------------------------- */
+  const newsletterForm = document.querySelector(".newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const target = document.querySelector('#features');
-      if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-    }
-  });
-});
+      const note = document.querySelector(".newsletter-note");
+      if (note) note.textContent = "// Thanks - you are on the list. No spam, only releases.";
+      newsletterForm.reset();
+    });
+  }
 
-// ===================================
-// Console Easter Egg (kept)
-// ===================================
-console.log('%c🚀 LithoQuant', 'color: #2563eb; font-size: 24px; font-weight: bold;');
-console.log('%cComfort • Live tick • Filter', 'color: #10b981; font-size: 12px;');
+  /* ----------------------------------------------------------
+     Boot
+     ---------------------------------------------------------- */
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+})();
