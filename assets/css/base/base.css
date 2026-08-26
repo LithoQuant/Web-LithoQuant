@@ -140,6 +140,10 @@ em {
   padding: 0 var(--gutter);
 }
 
+.container-wide {
+  max-width: 1440px;
+}
+
 section {
   position: relative;
   padding: clamp(72px, 9vw, 128px) 0;

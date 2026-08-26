@@ -333,8 +333,8 @@
 }
 .showcase-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(30px, 4vw, 56px);
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: clamp(26px, 3.5vw, 48px);
   align-items: center;
 }
 .showcase-tabs {
