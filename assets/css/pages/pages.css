@@ -422,6 +422,8 @@
   border-radius: 26px;
   box-shadow: var(--shadow-md);
   transition: transform 0.4s var(--ease-spring);
+  object-fit: cover;
+  overflow: hidden;
 }
 .member-card:hover .member-avatar .avatar {
   transform: rotate(-5deg) scale(1.05);
@@ -493,17 +495,17 @@
 /* - partners - */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  max-width: 880px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px;
+  max-width: 680px;
   margin: 0 auto;
 }
 .partner-card {
   text-align: center;
-  padding: 34px 28px;
-  border-radius: var(--radius-lg);
+  padding: 44px 38px 40px;
+  border-radius: var(--radius-xl);
   border: 1px solid var(--line);
-  background: var(--navy);
+  background: linear-gradient(170deg, var(--navy), var(--abyss-2));
   transition:
     transform 0.4s var(--ease-out),
     border-color 0.4s var(--ease-out),
@@ -512,36 +514,48 @@
 .partner-card:hover {
   transform: translateY(-6px);
   border-color: rgba(201, 170, 99, 0.4);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 .partner-logo {
-  display: grid;
-  place-items: center;
-  height: 92px;
-  margin-bottom: 20px;
-  background: #fff;
-  border-radius: var(--radius-md);
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  max-width: 420px;
+  margin: 0 auto 28px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px 36px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s var(--ease-spring);
+}
+.partner-card:hover .partner-logo {
+  transform: scale(1.02);
 }
 .partner-logo img {
   max-height: 100%;
+  max-width: 100%;
   width: auto;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 .partner-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 4px;
+  font-size: 1.35rem;
+  margin-bottom: 6px;
 }
 .partner-role {
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--sand-bright);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .partner-card p {
-  font-size: 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 .acknowledge {
   max-width: 720px;
@@ -567,5 +581,13 @@
   .team-grid,
   .partners-grid {
     grid-template-columns: 1fr;
+  }
+  .partner-card {
+    padding: 32px 22px 28px;
+  }
+  .partner-logo {
+    height: 110px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
   }
 }

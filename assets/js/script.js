@@ -12,6 +12,43 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ----------------------------------------------------------
+     0. Theme Switcher (Descent Dark / Geo-Brutalism)
+     ---------------------------------------------------------- */
+  const savedTheme = localStorage.getItem("lithoquant-theme");
+  if (savedTheme === "brutalism") {
+    doc.setAttribute("data-theme", "brutalism");
+  }
+
+  function updateThemeButtons(theme) {
+    const isBrutal = theme === "brutalism";
+    document.querySelectorAll(".theme-toggle-btn").forEach((btn) => {
+      const text = btn.querySelector(".toggle-text");
+      const icon = btn.querySelector(".toggle-icon");
+      if (text) text.textContent = isBrutal ? "Descent" : "Brutalism";
+      if (icon) icon.textContent = isBrutal ? "🌙" : "⚡";
+      btn.setAttribute("title", isBrutal ? "Switch to Descent Theme" : "Switch to Brutalism Theme");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".theme-toggle-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const current = doc.getAttribute("data-theme");
+        const next = current === "brutalism" ? "default" : "brutalism";
+        if (next === "default") {
+          doc.removeAttribute("data-theme");
+          localStorage.removeItem("lithoquant-theme");
+        } else {
+          doc.setAttribute("data-theme", next);
+          localStorage.setItem("lithoquant-theme", next);
+        }
+        updateThemeButtons(next);
+      });
+    });
+    updateThemeButtons(doc.getAttribute("data-theme") || "default");
+  });
+
+  /* ----------------------------------------------------------
      1. Navbar: scrolled state + active link + mobile menu
      ---------------------------------------------------------- */
   const navbar = document.getElementById("navbar");
