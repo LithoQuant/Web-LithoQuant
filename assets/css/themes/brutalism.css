@@ -1,39 +1,39 @@
 /* ============================================================
-   LithoQuant - "Geo-Brutalism" Theme
-   High-contrast, raw, stark petrophysical engineering aesthetic.
-   Hard black outlines (3px), 0px sharp corners, hard offset
-   drop shadows (no blur), saturated telemetry stickers (Teal/Yellow/Clay),
-   and technical millimeter well-log graph paper grid.
+   LithoQuant - "Geo-Brutalism" Theme: Vintage Swiss Geological Archive
+   High-contrast, prestigious 1970s Geological Survey manual & Swiss Bauhaus.
+   Warm antique survey paper (#FAF5EA), vermilion red-orange (#FF3B00),
+   deep mineral ultramarine (#1034A6), ochre mustard (#E5A910),
+   and archival pitch ink (#111111).
    ============================================================ */
 
 :root[data-theme="brutalism"],
 body[data-theme="brutalism"],
 .theme-brutalism {
   /* Surfaces */
-  --abyss: #f6f2e9;
-  --abyss-2: #ede7dc;
+  --abyss: #faf5ea;
+  --abyss-2: #efe7d8;
   --navy: #ffffff;
   --navy-2: #ffffff;
-  --navy-3: #f0eae0;
+  --navy-3: #f2ebd9;
 
-  /* Saturated High-Vis Telemetry Accents */
-  --teal: #000000;
-  --teal-deep: #000000;
-  --teal-bright: #00f0b5;
+  /* Vintage Swiss Geological Survey Accents */
+  --teal: #111111;
+  --teal-deep: #111111;
+  --teal-bright: #ff3b00;
   --teal-glow: none;
-  --sand: #ffe600;
-  --sand-bright: #ffe600;
+  --sand: #e5a910;
+  --sand-bright: #e5a910;
   --sand-glow: none;
-  --clay: #ff472e;
+  --clay: #1034a6;
 
   /* Text & Ink */
-  --paper: #000000;
-  --mist: #1a1a1a;
-  --faint: #444444;
+  --paper: #111111;
+  --mist: #2e2a24;
+  --faint: #5c5549;
 
   /* Lines & Geometry */
-  --line: #000000;
-  --line-strong: #000000;
+  --line: #111111;
+  --line-strong: #111111;
   --glass: #ffffff;
   --glass-blur: none;
   --radius-xs: 0px;
@@ -43,35 +43,35 @@ body[data-theme="brutalism"],
   --radius-xl: 0px;
 
   /* Hard Unblurred Drop Shadows */
-  --shadow-sm: 3px 3px 0px #000000;
-  --shadow-md: 5px 5px 0px #000000;
-  --shadow-lg: 8px 8px 0px #000000;
-  --shadow-teal: 6px 6px 0px #000000;
+  --shadow-sm: 3px 3px 0px #111111;
+  --shadow-md: 5px 5px 0px #111111;
+  --shadow-lg: 8px 8px 0px #111111;
+  --shadow-teal: 6px 6px 0px #111111;
 
   /* Theme specific tokens */
-  --b-border: 3px solid #000000;
-  --b-border-sm: 2px solid #000000;
-  --b-shadow: 5px 5px 0px #000000;
-  --b-shadow-sm: 3px 3px 0px #000000;
-  --b-shadow-lg: 8px 8px 0px #000000;
+  --b-border: 3px solid #111111;
+  --b-border-sm: 2px solid #111111;
+  --b-shadow: 5px 5px 0px #111111;
+  --b-shadow-sm: 3px 3px 0px #111111;
+  --b-shadow-lg: 8px 8px 0px #111111;
 }
 
 /* ============================================================
-   Global Overrides in Brutalism Mode
+   Global Overrides in Vintage Swiss Mode
    ============================================================ */
 
 [data-theme="brutalism"] body {
-  background-color: #f6f2e9 !important;
+  background-color: #faf5ea !important;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px) !important;
+    linear-gradient(rgba(17, 17, 17, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.06) 1px, transparent 1px) !important;
   background-size: 24px 24px !important;
-  color: #000000 !important;
+  color: #111111 !important;
 }
 
 [data-theme="brutalism"] ::selection {
-  background: #ffe600;
-  color: #000000;
+  background: #ff3b00;
+  color: #ffffff;
 }
 
 /* Scrollbar */
@@ -79,24 +79,24 @@ body[data-theme="brutalism"],
   width: 12px;
 }
 [data-theme="brutalism"] ::-webkit-scrollbar-track {
-  background: #ede7dc;
-  border-left: 2px solid #000000;
+  background: #efe7d8;
+  border-left: 2px solid #111111;
 }
 [data-theme="brutalism"] ::-webkit-scrollbar-thumb {
-  background: #000000;
-  border: 2px solid #ede7dc;
+  background: #111111;
+  border: 2px solid #efe7d8;
   border-radius: 0;
 }
 [data-theme="brutalism"] ::-webkit-scrollbar-thumb:hover {
-  background: #ffe600;
+  background: #ff3b00;
 }
 
 /* Focus */
 [data-theme="brutalism"] :focus-visible {
-  outline: 3px solid #000000;
+  outline: 3px solid #111111;
   outline-offset: 3px;
-  background: #ffe600;
-  color: #000000;
+  background: #e5a910;
+  color: #111111;
 }
 
 /* Headings */
@@ -104,31 +104,31 @@ body[data-theme="brutalism"],
 [data-theme="brutalism"] h2,
 [data-theme="brutalism"] h3,
 [data-theme="brutalism"] h4 {
-  color: #000000 !important;
+  color: #111111 !important;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 [data-theme="brutalism"] p {
-  color: #222222;
+  color: #2e2a24;
 }
 
 /* Page Header */
 [data-theme="brutalism"] .page-header {
   background: #ffffff !important;
-  border-bottom: 4px solid #000000 !important;
-  box-shadow: 0 6px 0 #000000 !important;
+  border-bottom: 4px solid #111111 !important;
+  box-shadow: 0 6px 0 #111111 !important;
 }
 [data-theme="brutalism"] .page-crumb {
-  background: #ffe600;
-  color: #000000;
-  border: 2px solid #000000;
-  box-shadow: 2px 2px 0 #000000;
+  background: #e5a910;
+  color: #111111;
+  border: 2px solid #111111;
+  box-shadow: 2px 2px 0 #111111;
   padding: 4px 12px;
   font-weight: 800;
 }
 [data-theme="brutalism"] .page-crumb a {
-  color: #000000 !important;
+  color: #111111 !important;
   font-weight: 800;
 }
 
@@ -138,34 +138,34 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .navbar {
   background: #ffffff !important;
-  border-bottom: 3px solid #000000 !important;
-  box-shadow: 0 4px 0px rgba(0, 0, 0, 1) !important;
+  border-bottom: 3px solid #111111 !important;
+  box-shadow: 0 4px 0px #111111 !important;
   padding: 12px 0;
 }
 [data-theme="brutalism"] .navbar.scrolled {
   background: #ffffff !important;
   padding: 10px 0;
-  border-bottom: 3px solid #000000 !important;
-  box-shadow: 0 5px 0px rgba(0, 0, 0, 1) !important;
+  border-bottom: 3px solid #111111 !important;
+  box-shadow: 0 5px 0px #111111 !important;
 }
 
 [data-theme="brutalism"] .logo-word {
-  color: #000000 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .logo-word b {
-  background: #00f0b5 !important;
-  color: #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
   padding: 2px 6px;
-  border: 2px solid #000000;
-  box-shadow: 2px 2px 0 #000000;
+  border: 2px solid #111111;
+  box-shadow: 2px 2px 0 #111111;
 }
 [data-theme="brutalism"] .logo-tag {
-  color: #333333 !important;
+  color: #5c5549 !important;
   font-weight: 700;
 }
 
 [data-theme="brutalism"] .nav-link {
-  color: #000000 !important;
+  color: #111111 !important;
   font-weight: 700;
   border-radius: 0;
   border: 2px solid transparent;
@@ -173,11 +173,11 @@ body[data-theme="brutalism"],
 }
 [data-theme="brutalism"] .nav-link:hover,
 [data-theme="brutalism"] .nav-link.active {
-  background: #ffe600 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  background: #e5a910 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   transform: translate(-2px, -2px);
-  color: #000000 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .nav-link::after {
   display: none !important;
@@ -185,10 +185,10 @@ body[data-theme="brutalism"],
 
 /* Navbar CTA */
 [data-theme="brutalism"] .navbar-cta {
-  background: #00f0b5 !important;
-  color: #000000 !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
   font-weight: 800;
   border-radius: 0 !important;
   text-transform: uppercase;
@@ -196,14 +196,14 @@ body[data-theme="brutalism"],
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 [data-theme="brutalism"] .navbar-cta:hover {
-  background: #ffe600 !important;
-  color: #000000 !important;
+  background: #1034a6 !important;
+  color: #ffffff !important;
   transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px #000000 !important;
+  box-shadow: 7px 7px 0px #111111 !important;
 }
 [data-theme="brutalism"] .navbar-cta:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px #000000 !important;
+  box-shadow: 1px 1px 0px #111111 !important;
 }
 
 /* ============================================================
@@ -211,55 +211,56 @@ body[data-theme="brutalism"],
    ============================================================ */
 
 [data-theme="brutalism"] .btn {
-  border: 3px solid #000000 !important;
+  border: 3px solid #111111 !important;
   border-radius: 0 !important;
   font-weight: 800 !important;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  box-shadow: 4px 4px 0px #000000 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 [data-theme="brutalism"] .btn:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px #000000 !important;
+  box-shadow: 7px 7px 0px #111111 !important;
 }
 [data-theme="brutalism"] .btn:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px #000000 !important;
+  box-shadow: 1px 1px 0px #111111 !important;
 }
 
 [data-theme="brutalism"] .btn-primary {
-  background: #00f0b5 !important;
-  color: #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
 }
 [data-theme="brutalism"] .btn-primary:hover {
-  background: #ffe600 !important;
-  color: #000000 !important;
+  background: #1034a6 !important;
+  color: #ffffff !important;
 }
 
 [data-theme="brutalism"] .btn-ghost {
   background: #ffffff !important;
-  color: #000000 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .btn-ghost:hover {
-  background: #ff472e !important;
+  background: #111111 !important;
   color: #ffffff !important;
 }
 
 /* Eyebrows, Chips & Badges */
 [data-theme="brutalism"] .eyebrow {
   display: inline-block;
-  background: #ffe600 !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  background: #e5a910 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   padding: 4px 10px;
   font-weight: 800;
   border-radius: 0 !important;
   text-transform: uppercase;
 }
 [data-theme="brutalism"] .eyebrow.sand {
-  background: #00f0b5 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
 }
 
 [data-theme="brutalism"] .meta-chip,
@@ -268,18 +269,18 @@ body[data-theme="brutalism"],
 [data-theme="brutalism"] .param-chip,
 [data-theme="brutalism"] .hero-badge {
   background: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   border-radius: 0 !important;
   font-weight: 700;
 }
 
 [data-theme="brutalism"] .strata-chip {
-  background: #000000 !important;
-  color: #ffe600 !important;
-  border: 2px solid #ffe600 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  background: #111111 !important;
+  color: #e5a910 !important;
+  border: 2px solid #e5a910 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
 }
 
 /* ============================================================
@@ -288,29 +289,29 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .depth-rail {
   background: #ffffff !important;
-  border-right: 3px solid #000000 !important;
-  box-shadow: 3px 0 0 #000000 !important;
+  border-right: 3px solid #111111 !important;
+  box-shadow: 3px 0 0 #111111 !important;
 }
 [data-theme="brutalism"] .rail-track {
-  background: #ede7dc !important;
-  border-left: 2px solid #000000 !important;
-  border-right: 2px solid #000000 !important;
+  background: #efe7d8 !important;
+  border-left: 2px solid #111111 !important;
+  border-right: 2px solid #111111 !important;
 }
 [data-theme="brutalism"] .rail-fill {
   background: repeating-linear-gradient(
     45deg,
-    #ffe600,
-    #ffe600 8px,
-    #000000 8px,
-    #000000 16px
+    #ff3b00,
+    #ff3b00 8px,
+    #e5a910 8px,
+    #e5a910 16px
   ) !important;
-  border-bottom: 3px solid #000000 !important;
+  border-bottom: 3px solid #111111 !important;
 }
 [data-theme="brutalism"] .rail-readout {
-  background: #000000 !important;
-  color: #ffe600 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 3px 3px 0px #ff472e !important;
+  background: #111111 !important;
+  color: #e5a910 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 3px 3px 0px #ff3b00 !important;
   border-radius: 0 !important;
   font-weight: 800;
 }
@@ -321,55 +322,56 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .hero-window {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 8px 8px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 8px 8px 0px #111111 !important;
   border-radius: 0 !important;
 }
 [data-theme="brutalism"] .hero-window-header {
-  background: #ede7dc !important;
-  border-bottom: 3px solid #000000 !important;
+  background: #efe7d8 !important;
+  border-bottom: 3px solid #111111 !important;
   padding: 8px 14px;
 }
-[data-theme="brutalism"] .window-btn.close { background: #ff472e !important; border: 1.5px solid #000; }
-[data-theme="brutalism"] .window-btn.min { background: #ffe600 !important; border: 1.5px solid #000; }
-[data-theme="brutalism"] .window-btn.max { background: #00f0b5 !important; border: 1.5px solid #000; }
+[data-theme="brutalism"] .window-btn.close { background: #ff3b00 !important; border: 1.5px solid #111111; }
+[data-theme="brutalism"] .window-btn.min { background: #e5a910 !important; border: 1.5px solid #111111; }
+[data-theme="brutalism"] .window-btn.max { background: #1034a6 !important; border: 1.5px solid #111111; }
 
 [data-theme="brutalism"] .hero-tagline {
   color: #111111 !important;
 }
 [data-theme="brutalism"] .hero-stat {
   background: #ffffff !important;
-  border: 2.5px solid #000000 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  border: 2.5px solid #111111 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
   border-radius: 0 !important;
 }
 [data-theme="brutalism"] .hero-stat .stat-val {
-  color: #000000 !important;
+  color: #111111 !important;
   font-weight: 900;
 }
 [data-theme="brutalism"] .hero-stat .stat-lbl {
-  color: #444444 !important;
+  color: #5c5549 !important;
   font-weight: 700;
 }
 
 /* Ticker Ribbon */
 [data-theme="brutalism"] .ticker-tape {
-  background: #ffe600 !important;
-  border-top: 3px solid #000000 !important;
-  border-bottom: 3px solid #000000 !important;
-  color: #000000 !important;
+  background: #ff3b00 !important;
+  border-top: 3px solid #111111 !important;
+  border-bottom: 3px solid #111111 !important;
+  color: #ffffff !important;
   font-weight: 800;
-  box-shadow: 0 4px 0px #000000;
+  box-shadow: 0 4px 0px #111111;
 }
 [data-theme="brutalism"] .ticker-item {
-  color: #000000 !important;
+  color: #ffffff !important;
   font-weight: 800;
 }
 [data-theme="brutalism"] .ticker-item .val {
-  background: #000000 !important;
-  color: #00f0b5 !important;
+  background: #111111 !important;
+  color: #e5a910 !important;
   padding: 1px 6px;
-  border: 1.5px solid #000000;
+  border: 1.5px solid #111111;
+  font-weight: 900;
 }
 
 /* ============================================================
@@ -384,10 +386,13 @@ body[data-theme="brutalism"],
 [data-theme="brutalism"] .news-item,
 [data-theme="brutalism"] .gallery-item,
 [data-theme="brutalism"] .showcase-frame,
-[data-theme="brutalism"] .team-mini {
+[data-theme="brutalism"] .team-mini,
+[data-theme="brutalism"] .step-card,
+[data-theme="brutalism"] .audience-card,
+[data-theme="brutalism"] .price-card {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 6px 6px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 6px 6px 0px #111111 !important;
   border-radius: 0 !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -398,60 +403,64 @@ body[data-theme="brutalism"],
 [data-theme="brutalism"] .pillar:hover,
 [data-theme="brutalism"] .news-card:hover,
 [data-theme="brutalism"] .gallery-item:hover,
-[data-theme="brutalism"] .team-mini:hover {
+[data-theme="brutalism"] .team-mini:hover,
+[data-theme="brutalism"] .step-card:hover,
+[data-theme="brutalism"] .audience-card:hover,
+[data-theme="brutalism"] .price-card:hover {
   transform: translate(-3px, -3px) !important;
-  box-shadow: 9px 9px 0px #000000 !important;
-  border-color: #000000 !important;
+  box-shadow: 9px 9px 0px #111111 !important;
+  border-color: #111111 !important;
 }
 
 [data-theme="brutalism"] .news-item:hover {
   transform: translateX(8px) !important;
-  box-shadow: 8px 8px 0px #000000 !important;
-  border-color: #000000 !important;
+  box-shadow: 8px 8px 0px #111111 !important;
+  border-color: #111111 !important;
 }
 
 [data-theme="brutalism"] .news-item::before {
-  background: #ffe600 !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 2px 2px 0px #000000 !important;
+  background: #e5a910 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 2px 2px 0px #111111 !important;
   border-radius: 0 !important;
 }
 [data-theme="brutalism"] .timeline::before {
-  background: #000000 !important;
+  background: #111111 !important;
   width: 3px !important;
 }
 
 [data-theme="brutalism"] .tag {
-  background: #ffe600 !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 2px 2px 0px #000000 !important;
+  background: #e5a910 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 2px 2px 0px #111111 !important;
   border-radius: 0 !important;
   font-weight: 800;
 }
 [data-theme="brutalism"] .tag.sand {
-  background: #00f0b5 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
 }
 
 [data-theme="brutalism"] .gallery-overlay {
   background: #ffffff !important;
-  border-top: 3px solid #000000 !important;
-  color: #000000 !important;
+  border-top: 3px solid #111111 !important;
+  color: #111111 !important;
   transform: translateY(0) !important;
   opacity: 1 !important;
 }
 [data-theme="brutalism"] .gallery-overlay h3 {
-  color: #000000 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .gallery-overlay p {
-  color: #333333 !important;
+  color: #2e2a24 !important;
   font-weight: 700;
 }
 [data-theme="brutalism"] .gallery-overlay .g-zoom {
-  background: #00f0b5 !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 2px 2px 0 #000000;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 2px 2px 0 #111111;
   border-radius: 0 !important;
   opacity: 1 !important;
   transform: none !important;
@@ -459,16 +468,18 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .bento-card::before,
 [data-theme="brutalism"] .feature-card::before,
-[data-theme="brutalism"] .member-card::before {
+[data-theme="brutalism"] .member-card::before,
+[data-theme="brutalism"] .pillar::before {
   display: none !important;
 }
 
 [data-theme="brutalism"] .feature-icon,
-[data-theme="brutalism"] .pillar-icon {
-  background: #ffe600 !important;
-  color: #000000 !important;
-  border: 2.5px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+[data-theme="brutalism"] .pillar-icon,
+[data-theme="brutalism"] .pillar-glyph {
+  background: #e5a910 !important;
+  color: #111111 !important;
+  border: 2.5px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   border-radius: 0 !important;
 }
 
@@ -478,8 +489,8 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .tab-navigation {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 5px 5px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 5px 5px 0px #111111 !important;
   border-radius: 0 !important;
   padding: 6px;
   gap: 6px;
@@ -487,7 +498,7 @@ body[data-theme="brutalism"],
 [data-theme="brutalism"] .tab-btn,
 [data-theme="brutalism"] .showcase-tab {
   background: transparent !important;
-  color: #000000 !important;
+  color: #111111 !important;
   border: 2px solid transparent !important;
   border-radius: 0 !important;
   font-weight: 700;
@@ -495,17 +506,25 @@ body[data-theme="brutalism"],
 }
 [data-theme="brutalism"] .tab-btn:hover,
 [data-theme="brutalism"] .showcase-tab:hover {
-  background: #ede7dc !important;
-  border: 2px solid #000000 !important;
+  background: #efe7d8 !important;
+  border: 2px solid #111111 !important;
 }
 [data-theme="brutalism"] .tab-btn.active,
 [data-theme="brutalism"] .showcase-tab.active {
-  background: #00f0b5 !important;
-  color: #000000 !important;
-  border: 2.5px solid #000000 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
+  border: 2.5px solid #111111 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
   font-weight: 800;
   transform: translate(-2px, -2px);
+}
+[data-theme="brutalism"] .showcase-tab.active .st-body h4,
+[data-theme="brutalism"] .showcase-tab.active .st-index,
+[data-theme="brutalism"] .showcase-tab.active .st-arrow {
+  color: #ffffff !important;
+}
+[data-theme="brutalism"] .showcase-tab.active p {
+  color: #fcece8 !important;
 }
 
 /* ============================================================
@@ -514,63 +533,63 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .member-card {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 6px 6px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 6px 6px 0px #111111 !important;
   border-radius: 0 !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 [data-theme="brutalism"] .member-card:hover {
   transform: translate(-4px, -4px) !important;
-  box-shadow: 10px 10px 0px #000000 !important;
-  border-color: #000000 !important;
+  box-shadow: 10px 10px 0px #111111 !important;
+  border-color: #111111 !important;
 }
 [data-theme="brutalism"] .member-avatar .avatar {
-  border: 3px solid #000000 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
   border-radius: 0 !important;
 }
 [data-theme="brutalism"] .member-card:hover .member-avatar .avatar {
   transform: rotate(-3deg) scale(1.04) !important;
 }
 [data-theme="brutalism"] .member-status {
-  border: 2.5px solid #000000 !important;
-  background: #00f0b5 !important;
+  border: 2.5px solid #111111 !important;
+  background: #ff3b00 !important;
   width: 18px;
   height: 18px;
   border-radius: 0 !important;
-  box-shadow: 2px 2px 0 #000000 !important;
+  box-shadow: 2px 2px 0 #111111 !important;
 }
 [data-theme="brutalism"] .member-status.past {
-  background: #888888 !important;
+  background: #999185 !important;
 }
 [data-theme="brutalism"] .member-status.advisor {
-  background: #ffe600 !important;
+  background: #e5a910 !important;
 }
 [data-theme="brutalism"] .member-role {
-  color: #000000 !important;
-  background: #ffe600 !important;
+  color: #111111 !important;
+  background: #e5a910 !important;
   display: inline-block;
   padding: 2px 8px;
-  border: 1.5px solid #000000 !important;
+  border: 1.5px solid #111111 !important;
   font-weight: 800;
 }
 
 [data-theme="brutalism"] .member-contact a,
 [data-theme="brutalism"] .social-links a {
   background: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   border-radius: 0 !important;
   transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 [data-theme="brutalism"] .member-contact a:hover,
 [data-theme="brutalism"] .social-links a:hover {
-  background: #00f0b5 !important;
-  color: #000000 !important;
-  border-color: #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
+  border-color: #111111 !important;
   transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0px #000000 !important;
+  box-shadow: 5px 5px 0px #111111 !important;
 }
 
 /* ============================================================
@@ -579,26 +598,26 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .partner-card {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 7px 7px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 7px 7px 0px #111111 !important;
   border-radius: 0 !important;
 }
 [data-theme="brutalism"] .partner-card:hover {
   transform: translate(-3px, -3px) !important;
-  box-shadow: 10px 10px 0px #000000 !important;
-  border-color: #000000 !important;
+  box-shadow: 10px 10px 0px #111111 !important;
+  border-color: #111111 !important;
 }
 [data-theme="brutalism"] .partner-logo {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 5px 5px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 5px 5px 0px #111111 !important;
   border-radius: 0 !important;
 }
 [data-theme="brutalism"] .acknowledge {
   background: #ffffff !important;
-  border: 3px dashed #000000 !important;
-  box-shadow: 5px 5px 0px #000000 !important;
-  color: #000000 !important;
+  border: 3px dashed #111111 !important;
+  box-shadow: 5px 5px 0px #111111 !important;
+  color: #111111 !important;
   border-radius: 0 !important;
   font-weight: 600;
 }
@@ -609,16 +628,16 @@ body[data-theme="brutalism"],
 
 [data-theme="brutalism"] .cta-panel {
   background: #ffffff !important;
-  border: 4px solid #000000 !important;
-  box-shadow: 10px 10px 0px #000000 !important;
+  border: 4px solid #111111 !important;
+  box-shadow: 10px 10px 0px #111111 !important;
   border-radius: 0 !important;
-  color: #000000 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .cta-panel h2 {
-  color: #000000 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .cta-panel p {
-  color: #222222 !important;
+  color: #2e2a24 !important;
 }
 
 /* ============================================================
@@ -626,54 +645,54 @@ body[data-theme="brutalism"],
    ============================================================ */
 
 [data-theme="brutalism"] .footer {
-  background: #ede7dc !important;
-  border-top: 3px solid #000000 !important;
-  color: #000000 !important;
+  background: #efe7d8 !important;
+  border-top: 3px solid #111111 !important;
+  color: #111111 !important;
 }
 [data-theme="brutalism"] .footer::before {
   display: none !important;
 }
 [data-theme="brutalism"] .footer-section h4 {
-  color: #000000 !important;
-  background: #ffe600 !important;
+  color: #111111 !important;
+  background: #e5a910 !important;
   display: inline-block;
   padding: 2px 8px;
-  border: 2px solid #000000 !important;
-  box-shadow: 2px 2px 0px #000000 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 2px 2px 0px #111111 !important;
 }
 [data-theme="brutalism"] .footer-section ul a {
-  color: #222222 !important;
+  color: #2e2a24 !important;
   font-weight: 600;
 }
 [data-theme="brutalism"] .footer-section ul a:hover {
-  color: #000000 !important;
+  color: #ff3b00 !important;
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
 [data-theme="brutalism"] .footer-bottom {
-  border-top: 2px solid #000000 !important;
-  color: #444444 !important;
+  border-top: 2px solid #111111 !important;
+  color: #5c5549 !important;
   font-weight: 600;
 }
 [data-theme="brutalism"] .newsletter-input {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  color: #000000 !important;
+  border: 3px solid #111111 !important;
+  color: #111111 !important;
   border-radius: 0 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
 }
 [data-theme="brutalism"] .newsletter-btn {
-  background: #00f0b5 !important;
-  color: #000000 !important;
-  border: 3px solid #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
+  border: 3px solid #111111 !important;
   border-radius: 0 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  box-shadow: 4px 4px 0px #111111 !important;
   font-weight: 800;
 }
 [data-theme="brutalism"] .newsletter-btn:hover {
-  background: #ffe600 !important;
+  background: #1034a6 !important;
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #000000 !important;
+  box-shadow: 6px 6px 0px #111111 !important;
 }
 
 /* ============================================================
@@ -716,35 +735,35 @@ body[data-theme="brutalism"],
 }
 
 [data-theme="brutalism"] .theme-toggle-btn {
-  background: #ffe600 !important;
-  color: #000000 !important;
-  border: 2.5px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  background: #ff3b00 !important;
+  color: #ffffff !important;
+  border: 2.5px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   border-radius: 0 !important;
   font-weight: 800;
 }
 [data-theme="brutalism"] .theme-toggle-btn:hover {
-  background: #00f0b5 !important;
+  background: #1034a6 !important;
   transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px #000000 !important;
+  box-shadow: 5px 5px 0px #111111 !important;
 }
 [data-theme="brutalism"] .theme-toggle-btn:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px #000000 !important;
+  box-shadow: 1px 1px 0px #111111 !important;
 }
 
 /* Showcase Viewer in Brutalism Mode */
 [data-theme="brutalism"] .viewer-frame {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  box-shadow: 8px 8px 0px #000000 !important;
+  border: 3px solid #111111 !important;
+  box-shadow: 8px 8px 0px #111111 !important;
   border-radius: 0 !important;
   display: flex !important;
   flex-direction: column !important;
 }
 [data-theme="brutalism"] .viewer-frame img {
-  background: #000000 !important;
-  border-bottom: 3px solid #000000 !important;
+  background: #111111 !important;
+  border-bottom: 3px solid #111111 !important;
   width: 100% !important;
   height: auto !important;
   max-height: 560px !important;
@@ -752,15 +771,15 @@ body[data-theme="brutalism"],
 }
 [data-theme="brutalism"] .viewer-caption {
   background: #ffffff !important;
-  border-top: 3px solid #000000 !important;
-  color: #000000 !important;
+  border-top: 3px solid #111111 !important;
+  color: #111111 !important;
   font-weight: 700 !important;
 }
 [data-theme="brutalism"] .viewer-expand {
-  background: #ffe600 !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  background: #e5a910 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 3px 3px 0px #111111 !important;
   border-radius: 0 !important;
   opacity: 1 !important;
   transform: none !important;
@@ -773,13 +792,13 @@ body[data-theme="brutalism"],
 @media (max-width: 768px) {
   :root[data-theme="brutalism"],
   body[data-theme="brutalism"] {
-    --shadow-sm: 2px 2px 0px #000000;
-    --shadow-md: 3px 3px 0px #000000;
-    --shadow-lg: 4px 4px 0px #000000;
-    --shadow-teal: 3px 3px 0px #000000;
-    --b-shadow: 3px 3px 0px #000000;
-    --b-shadow-sm: 2px 2px 0px #000000;
-    --b-shadow-lg: 4px 4px 0px #000000;
+    --shadow-sm: 2px 2px 0px #111111;
+    --shadow-md: 3px 3px 0px #111111;
+    --shadow-lg: 4px 4px 0px #111111;
+    --shadow-teal: 3px 3px 0px #111111;
+    --b-shadow: 3px 3px 0px #111111;
+    --b-shadow-sm: 2px 2px 0px #111111;
+    --b-shadow-lg: 4px 4px 0px #111111;
   }
 
   [data-theme="brutalism"] .cta-panel,
@@ -792,22 +811,22 @@ body[data-theme="brutalism"],
   [data-theme="brutalism"] .pillar,
   [data-theme="brutalism"] .news-item,
   [data-theme="brutalism"] .gallery-item {
-    box-shadow: 4px 4px 0px #000000 !important;
+    box-shadow: 4px 4px 0px #111111 !important;
     min-width: 0 !important;
     max-width: 100% !important;
   }
 
   [data-theme="brutalism"] .btn {
-    box-shadow: 3px 3px 0px #000000 !important;
+    box-shadow: 3px 3px 0px #111111 !important;
   }
 }
 
 @media (max-width: 480px) {
   [data-theme="brutalism"] .cta-panel {
     border-width: 3px !important;
-    box-shadow: 3px 3px 0px #000000 !important;
+    box-shadow: 3px 3px 0px #111111 !important;
   }
   [data-theme="brutalism"] .navbar {
-    box-shadow: 0 3px 0px #000000 !important;
+    box-shadow: 0 3px 0px #111111 !important;
   }
 }
