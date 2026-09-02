@@ -765,3 +765,49 @@ body[data-theme="brutalism"],
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* ============================================================
+   Responsive Brutalism Safeguards (No Mobile Horizontal Overflow)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  :root[data-theme="brutalism"],
+  body[data-theme="brutalism"] {
+    --shadow-sm: 2px 2px 0px #000000;
+    --shadow-md: 3px 3px 0px #000000;
+    --shadow-lg: 4px 4px 0px #000000;
+    --shadow-teal: 3px 3px 0px #000000;
+    --b-shadow: 3px 3px 0px #000000;
+    --b-shadow-sm: 2px 2px 0px #000000;
+    --b-shadow-lg: 4px 4px 0px #000000;
+  }
+
+  [data-theme="brutalism"] .cta-panel,
+  [data-theme="brutalism"] .hero-window,
+  [data-theme="brutalism"] .viewer-frame,
+  [data-theme="brutalism"] .partner-card,
+  [data-theme="brutalism"] .member-card,
+  [data-theme="brutalism"] .bento-card,
+  [data-theme="brutalism"] .feature-card,
+  [data-theme="brutalism"] .pillar,
+  [data-theme="brutalism"] .news-item,
+  [data-theme="brutalism"] .gallery-item {
+    box-shadow: 4px 4px 0px #000000 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  [data-theme="brutalism"] .btn {
+    box-shadow: 3px 3px 0px #000000 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [data-theme="brutalism"] .cta-panel {
+    border-width: 3px !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+  }
+  [data-theme="brutalism"] .navbar {
+    box-shadow: 0 3px 0px #000000 !important;
+  }
+}

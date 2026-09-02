@@ -441,22 +441,66 @@
 @media (max-width: 1024px) {
   .hero-layout {
     grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
+  }
+  .hero-media {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
   .hero-window {
     transform: none;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
-  .float-card.fc-1 {
-    left: -8px;
-  }
-  .float-card.fc-2 {
-    right: -8px;
+  .float-card {
+    display: none;
   }
 }
+
 @media (max-width: 640px) {
+  .hero {
+    padding-top: clamp(120px, 15vh, 160px);
+  }
+  .hero-title {
+    font-size: clamp(2rem, 7.8vw, 2.7rem);
+    letter-spacing: -0.02em;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
   .float-card {
     display: none;
   }
   .ticker-hint {
     display: none;
+  }
+  .ticker-label {
+    padding: 10px 12px;
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-trust {
+    font-size: 0.7rem;
+    gap: 6px 12px;
+  }
+  .window-bar {
+    padding: 8px 12px;
+  }
+  .window-title {
+    font-size: 0.62rem;
   }
 }

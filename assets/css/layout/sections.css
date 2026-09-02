@@ -1060,14 +1060,28 @@
   }
   .showcase-layout {
     grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
   }
   .showcase-tabs {
     flex-direction: row;
     overflow-x: auto;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
   }
   .showcase-tab {
-    min-width: 240px;
+    min-width: min(240px, 80vw);
+    flex-shrink: 0;
+  }
+  .showcase-viewer,
+  .viewer-frame {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
   .audience-grid {
     grid-template-columns: 1fr;
@@ -1077,12 +1091,33 @@
   }
   .about-grid {
     grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
   }
 }
+
 @media (max-width: 640px) {
+  section {
+    padding: clamp(52px, 8vw, 84px) 0;
+  }
+  .section-head {
+    margin-bottom: clamp(32px, 5vw, 48px);
+  }
   .workflow-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+  .step-card {
+    padding: 24px 18px;
+  }
+  .pillar {
+    padding: 24px 18px;
+  }
+  .audience-card {
+    padding: 24px 18px;
+  }
+  .price-card {
+    padding: 24px 18px;
   }
   .team-preview {
     grid-template-columns: 1fr;
@@ -1091,6 +1126,43 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .stat-cell {
-    padding: 24px 16px;
+    padding: 20px 14px;
+  }
+  .stat-value {
+    font-size: 1.9rem;
+  }
+  .cta-panel {
+    padding: 38px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-cell {
+    padding: 18px 12px;
+  }
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cta-notes {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .team-mini {
+    padding: 12px;
+    gap: 10px;
+  }
+  .team-mini h4 {
+    font-size: 0.95rem;
+    word-break: break-word;
   }
 }
