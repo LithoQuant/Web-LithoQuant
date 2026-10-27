@@ -14,8 +14,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(154, 169, 189, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(154, 169, 189, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(20, 90, 83, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 90, 83, 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, #000, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, #000, transparent 80%);
@@ -99,7 +99,7 @@
   transition: transform 0.3s var(--ease-spring);
 }
 .footer-section ul a:hover {
-  color: var(--paper);
+  color: var(--teal-deep);
 }
 .footer-section ul a:hover::before {
   transform: translateY(-50%) rotate(45deg) scale(1);
@@ -130,12 +130,12 @@
   letter-spacing: 0.08em;
   color: var(--faint);
 }
-.footer-bottom .fb-depth {
+.footer-bottom .fb-tagline {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
-.footer-bottom .fb-depth i {
+.footer-bottom .fb-tagline i {
   color: var(--teal-bright);
   animation: caret-bob 2.4s ease-in-out infinite;
 }

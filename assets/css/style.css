@@ -1,8 +1,6 @@
 /* ============================================================
    LithoQuant - Main Stylesheet
-   Theme: "The Descent" - scrolling the page is descending a
-   wellbore. Stratigraphic dividers, depth rail, log-grid
-   ambience. Palette from the brand mark.
+   Theme: Professional light with an optional dark presentation.
    Edit modules instead of this file.
    ============================================================ */
 
@@ -13,4 +11,5 @@
 @import url("layout/hero.css");
 @import url("layout/sections.css");
 @import url("pages/pages.css");
-@import url("themes/brutalism.css");
+@import url("themes/modern.css");
+@import url("themes/dark.css");

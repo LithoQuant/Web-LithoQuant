@@ -62,7 +62,7 @@ All calculations are logged with a SHA-256 audit trail.
 * Semantic HTML5
 * Modular CSS with custom properties, no framework
 * Vanilla JavaScript, no framework
-* Font Awesome 6.4.0 and Inter / JetBrains Mono via Google Fonts
+* Font Awesome 6.4.0 and Instrument Sans / JetBrains Mono via Google Fonts
 
 ## Getting Started
 

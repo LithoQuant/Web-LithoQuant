@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="LithoQuant in the field - event gallery from IPA Convex 2026, IPA Convex 2025, and Joint Convention Semarang 2025." />
-    <meta name="theme-color" content="#050c17" />
+    <meta name="theme-color" content="#f5f7f4" />
     <title>Gallery - LithoQuant</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/branding/icons.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260826b" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20261027-ui2" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -40,8 +40,8 @@
             <li><a href="news.html" class="nav-link">News</a></li>
             <li><a href="developer.html" class="nav-link">Developer</a></li>
           </ul>
-          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
-            <span class="toggle-icon">⚡</span> <span class="toggle-text">Brutalism</span>
+          <button type="button" class="theme-toggle-btn" aria-label="Switch to dark theme" aria-pressed="false">
+            <i class="toggle-icon fas fa-moon" aria-hidden="true"></i> <span class="toggle-text">Dark</span>
           </button>
           <a href="index.html#download" class="navbar-cta">Request Demo <i class="fas fa-arrow-right"></i></a>
           <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
@@ -56,19 +56,28 @@
         <div class="bg-contours" aria-hidden="true"></div>
         <div class="container">
           <span class="page-crumb">
-            <a href="index.html">Surface</a>
-            <i class="fas fa-caret-down"></i>
-            <span>1,200 ft</span>
+            <a href="index.html">Home</a>
+            <i class="fas fa-angle-right"></i>
+            <span>Gallery</span>
           </span>
-          <h1>Out in the <span style="color: var(--teal-bright)">field</span></h1>
-          <p>LithoQuant on the road - conventions, demos, and the people we met along the way.</p>
+          <h1>Events &amp; <span style="color: var(--teal-bright)">community</span></h1>
+          <p>Events, product demonstrations, and the people working with LithoQuant.</p>
         </div>
       </section>
 
       <section>
         <div class="container">
           <div class="gallery-grid">
-            <figure class="gallery-item reveal" data-lightbox>
+            <figure class="gallery-item reveal" data-lightbox role="button" tabindex="0" aria-label="Open HAGI Annual Scientific Meeting photo">
+              <img src="assets/images/gallery/PIT-Hagi-2026.jpeg" alt="LithoQuant presented at the 55th HAGI Annual Scientific Meeting in Bandung" loading="lazy" />
+              <figcaption class="gallery-overlay">
+                <span class="g-zoom"><i class="fas fa-expand"></i></span>
+                <h3>55th HAGI Annual Scientific Meeting</h3>
+                <p>Bandung · 12–15 October 2026</p>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-lightbox role="button" tabindex="0" aria-label="Open IPA Convex 2026 photo">
               <img src="assets/images/gallery/IPA-2026.png" alt="LithoQuant team at IPA Convex 2026" loading="lazy" />
               <figcaption class="gallery-overlay">
                 <span class="g-zoom"><i class="fas fa-expand"></i></span>
@@ -77,7 +86,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-item reveal" style="--d: 0.12s" data-lightbox>
+            <figure class="gallery-item reveal" style="--d: 0.12s" data-lightbox role="button" tabindex="0" aria-label="Open IPA Convex 2025 photo">
               <img src="assets/images/gallery/ipa-2025.jpg" alt="LithoQuant team at IPA Convex 2025" loading="lazy" />
               <figcaption class="gallery-overlay">
                 <span class="g-zoom"><i class="fas fa-expand"></i></span>
@@ -86,7 +95,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-item reveal" style="--d: 0.24s" data-lightbox>
+            <figure class="gallery-item reveal" style="--d: 0.24s" data-lightbox role="button" tabindex="0" aria-label="Open Joint Convention Semarang 2025 photo">
               <img src="assets/images/gallery/jcs-2025.jpg" alt="LithoQuant team at Joint Convention Semarang 2025" loading="lazy" />
               <figcaption class="gallery-overlay">
                 <span class="g-zoom"><i class="fas fa-expand"></i></span>
@@ -95,7 +104,7 @@
               </figcaption>
             </figure>
           </div>
-          <p class="gallery-note">// More stations on the next expedition - watch the news page</p>
+          <p class="gallery-note">More photos from LithoQuant events will be added here.</p>
         </div>
       </section>
     </main>
@@ -152,22 +161,22 @@
         </div>
         <div class="footer-bottom">
           <p>&copy; 2024-2026 LithoQuant. All rights reserved.</p>
-          <span class="fb-depth"><i class="fas fa-caret-down"></i> Total depth 15,000 ft</span>
+          <span class="fb-tagline"><i class="fas fa-arrow-up"></i> From well logs to trusted decisions</span>
         </div>
       </div>
     </footer>
 
-    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div id="lightbox" class="lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Image preview">
       <button class="lightbox-close" aria-label="Close preview"><i class="fas fa-times"></i></button>
       <img alt="Preview" />
     </div>
     <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     <div class="comfort-bar">
-      <button id="comfort-toggle" class="comfort-btn" aria-pressed="false" title="Reduce motion">
-        <i class="fas fa-leaf"></i> <span>Calm</span>
+      <button id="comfort-toggle" class="comfort-btn" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion">
+        <i class="fas fa-leaf" aria-hidden="true"></i> <span>Reduce motion</span>
       </button>
     </div>
 
-    <script src="assets/js/script.js?v=20260826b"></script>
+    <script src="assets/js/script.js?v=20261027-ui2"></script>
   </body>
 </html>

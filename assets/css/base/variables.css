@@ -1,63 +1,61 @@
-/* ============================================================
-   LithoQuant Design Tokens - "The Descent"
-   Palette drawn from the brand mark: abyssal navy, formation
-   teal, sandstone gold. Warm paper text, cool mist secondary.
-   ============================================================ */
+/* LithoQuant visual system: restrained mineral neutrals and field green. */
 
 :root {
-  /* - Surfaces: descending into the subsurface - */
-  --abyss: #050c17;
-  --abyss-2: #071224;
-  --navy: #0a1a33;
-  --navy-2: #0e2342;
-  --navy-3: #143055;
+  color-scheme: light;
 
-  /* - Brand hues (from the mark) - */
-  --teal: #0e5956;
-  --teal-deep: #0a4341;
-  --teal-bright: #35c4b5;
-  --teal-glow: rgba(53, 196, 181, 0.35);
-  --sand: #c9aa63;
-  --sand-bright: #e6cd8f;
-  --sand-glow: rgba(201, 170, 99, 0.3);
-  --clay: #c4553c;
+  /* - Surfaces - */
+  --abyss: #f5f7f4;
+  --abyss-2: #eaf0eb;
+  --navy: #ffffff;
+  --navy-2: #f9fbf9;
+  --navy-3: #e0e9e3;
+
+  /* - Brand hues - */
+  --teal: #155e53;
+  --teal-deep: #10483f;
+  --teal-bright: #087b69;
+  --teal-glow: rgba(8, 123, 105, 0.18);
+  --sand: #b28139;
+  --sand-bright: #8c6222;
+  --sand-glow: rgba(178, 129, 57, 0.16);
+  --clay: #a94f40;
 
   /* - Text - */
-  --paper: #f2eee3;
-  --mist: #9aa9bd;
-  --faint: #64748b;
+  --paper: #172f29;
+  --mist: #52645d;
+  --faint: #68756e;
 
   /* - Lines & glass - */
-  --line: rgba(154, 169, 189, 0.13);
-  --line-strong: rgba(154, 169, 189, 0.28);
-  --glass: rgba(10, 26, 51, 0.72);
-  --glass-blur: saturate(1.4) blur(14px);
+  --line: rgba(23, 63, 49, 0.1);
+  --line-strong: rgba(23, 63, 49, 0.18);
+  --glass: rgba(255, 255, 255, 0.9);
+  --glass-blur: saturate(1.15) blur(14px);
 
   /* - Typography - */
-  --font-display: "Bricolage Grotesque", "Avenir Next", Arial, sans-serif;
+  --font-display: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
 
   /* - Geometry - */
-  --radius-xs: 8px;
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 22px;
-  --radius-xl: 28px;
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --container: 1200px;
   --gutter: 24px;
 
   /* - Elevation - */
-  --shadow-sm: 0 2px 10px rgba(2, 8, 20, 0.35);
-  --shadow-md: 0 10px 30px rgba(2, 8, 20, 0.45);
-  --shadow-lg: 0 24px 60px rgba(2, 8, 20, 0.55);
-  --shadow-teal: 0 12px 44px rgba(14, 89, 86, 0.45);
+  --shadow-sm: 0 2px 8px rgba(24, 54, 42, 0.05);
+  --shadow-md: 0 10px 28px rgba(24, 54, 42, 0.08);
+  --shadow-lg: 0 24px 60px rgba(24, 54, 42, 0.12);
+  --shadow-teal: 0 10px 26px rgba(21, 94, 83, 0.18);
+  --footer-bg: #123d33;
+  --footer-ink: #e9f1ec;
 
   /* - Motion - */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --speed: 0.45s;
 
-  /* - Depth rail - */
-  --rail-size: 64px;
 }

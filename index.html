@@ -7,7 +7,7 @@
       name="description"
       content="LithoQuant - professional petrophysical analysis software. From LAS to decision in minutes: multi-track visualization, 15+ audited calculation methods, geomechanics, and live drilling feed."
     />
-    <meta name="theme-color" content="#050c17" />
+    <meta name="theme-color" content="#f5f7f4" />
     <meta property="og:title" content="LithoQuant - From LAS to decision in minutes" />
     <meta
       property="og:description"
@@ -20,13 +20,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260826b" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20261027-ui2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -61,8 +61,8 @@
             <li><a href="news.html" class="nav-link">News</a></li>
             <li><a href="developer.html" class="nav-link">Developer</a></li>
           </ul>
-          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
-            <span class="toggle-icon">⚡</span> <span class="toggle-text">Brutalism</span>
+          <button type="button" class="theme-toggle-btn" aria-label="Switch to dark theme" aria-pressed="false">
+            <i class="toggle-icon fas fa-moon" aria-hidden="true"></i> <span class="toggle-text">Dark</span>
           </button>
           <a href="#download" class="navbar-cta">Request Demo <i class="fas fa-arrow-right"></i></a>
           <button
@@ -83,46 +83,32 @@
       <section id="home" class="hero">
         <div class="bg-contours" aria-hidden="true"></div>
         <div class="bg-grid" aria-hidden="true"></div>
-        <div class="glow-orb orb-teal" aria-hidden="true"></div>
-        <div class="glow-orb orb-sand" aria-hidden="true"></div>
-
         <div class="container">
-          <div class="hero-layout">
-            <div class="hero-content">
-              <div id="hero-greeting" class="hero-greeting" aria-live="polite"></div>
-              <div class="eyebrow reveal">
-                <i class="fas fa-caret-down"></i> Surface · Petrophysical Software · v1.1
-              </div>
-              <h1 class="hero-title">
-                <span class="line reveal" style="--d: 0.05s">From LAS to decision</span>
-                <span class="line accent reveal" style="--d: 0.14s">in minutes.</span>
-              </h1>
-              <p class="hero-subtitle reveal" style="--d: 0.22s">
-                LithoQuant turns raw well logs into trusted answers - visualize, calculate,
-                quality-check, and export without leaving one window.
-              </p>
-              <p class="hero-description reveal" style="--d: 0.28s">
-                Built at ITS Geophysical Engineering for petroleum engineers and geoscientists
-                who want instrument-grade analysis with a modern, intuitive interface.
-              </p>
-              <div class="hero-buttons reveal" style="--d: 0.34s">
-                <a href="#download" class="btn btn-primary">
-                  <i class="fas fa-paper-plane"></i> Request a Demo
-                </a>
-                <a href="#features" class="btn btn-ghost">
-                  <i class="fas fa-binoculars"></i> Explore Features
-                </a>
-              </div>
-              <div class="hero-trust reveal" style="--d: 0.4s">
-                <span><span class="trust-dot"></span><strong>SHA-256</strong> audit trail</span>
-                <span>·</span>
-                <span><strong>687</strong> tests passing</span>
-                <span>·</span>
-                <span>Win / macOS / Linux</span>
-              </div>
+          <div class="hero-intro">
+            <div class="eyebrow reveal">
+              <i class="fas fa-layer-group"></i> Petrophysical analysis · v1.1
             </div>
+            <h1 class="hero-title reveal" style="--d: 0.05s">
+              See more in every well.<br /><span class="accent">Decide with confidence.</span>
+            </h1>
+            <p class="hero-subtitle reveal" style="--d: 0.14s">
+              LithoQuant brings well-log visualization, petrophysical calculations, and
+              interpretation into one focused desktop workspace.
+            </p>
+            <div class="hero-buttons reveal" style="--d: 0.22s">
+              <a href="#download" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Request a Demo
+              </a>
+              <a href="#showcase" class="btn btn-ghost">
+                <i class="fas fa-images"></i> Explore the Software
+              </a>
+            </div>
+            <p class="hero-origin reveal" style="--d: 0.28s">
+              Developed at Geophysical Engineering, Institut Teknologi Sepuluh Nopember.
+            </p>
+          </div>
 
-            <div class="hero-media reveal reveal-right" style="--d: 0.25s">
+          <div class="hero-media hero-product reveal" style="--d: 0.18s">
               <div class="hero-window">
                 <div class="window-bar">
                   <div class="window-dots"><span></span><span></span><span></span></div>
@@ -135,12 +121,6 @@
                     alt="LithoQuant multi-track log display with gamma ray, resistivity, density and porosity tracks"
                     loading="eager"
                   />
-                  <div class="scanline" aria-hidden="true"></div>
-                  <span class="scan-chip" id="scan-chip" aria-hidden="true">4,218 FT</span>
-                  <div class="window-hud" aria-hidden="true">
-                    <span class="hud-live"><i class="fas fa-circle"></i> LIVE INTERPRETATION</span>
-                    <span>TD 15,000 FT · 1:1000</span>
-                  </div>
                 </div>
               </div>
               <div class="float-card fc-1" aria-hidden="true">
@@ -157,64 +137,115 @@
                   <span class="fc-value">687 passing</span>
                 </span>
               </div>
-            </div>
+          </div>
+          <div class="hero-trust hero-proofbar reveal" style="--d: 0.25s">
+            <span><span class="trust-dot"></span><strong>SHA-256</strong> audit trail</span>
+            <span><strong>687</strong> automated tests</span>
+            <span><strong>12</strong> integrated modules</span>
+            <span>Windows · macOS · Linux</span>
           </div>
         </div>
 
         <!-- Live log ticker -->
-        <div class="hero-ticker" aria-label="Simulated live log feed">
-          <span class="ticker-label"><i class="fas fa-circle"></i> LIVE LOG</span>
-          <div class="ticker-clip">
-            <div class="ticker-track" id="ticker-track"></div>
-          </div>
-          <span class="ticker-hint">SIM</span>
-        </div>
       </section>
 
       <!-- ================= STATS ================= -->
       <section class="stats-band" aria-label="Key numbers">
         <div class="container">
           <div class="stats-grid">
-            <div class="stat-cell reveal">
-              <div class="stat-value"><span data-count="687">0</span></div>
+            <div class="stat-cell">
+              <div class="stat-value"><span>687</span></div>
               <div class="stat-label">Automated tests</div>
             </div>
-            <div class="stat-cell reveal" style="--d: 0.08s">
-              <div class="stat-value"><span data-count="15">0</span><span class="unit">+</span></div>
+            <div class="stat-cell">
+              <div class="stat-value"><span>15</span><span class="unit">+</span></div>
               <div class="stat-label">Calculation methods</div>
             </div>
-            <div class="stat-cell reveal" style="--d: 0.16s">
-              <div class="stat-value"><span data-count="12">0</span></div>
+            <div class="stat-cell">
+              <div class="stat-value"><span>12</span></div>
               <div class="stat-label">Integrated modules</div>
             </div>
-            <div class="stat-cell reveal" style="--d: 0.24s">
-              <div class="stat-value"><span data-count="5">0</span></div>
+            <div class="stat-cell">
+              <div class="stat-value"><span>5</span></div>
               <div class="stat-label">Export formats</div>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="strata" aria-hidden="true">
-        <svg viewBox="0 0 1440 96" preserveAspectRatio="none">
-          <path class="strata-fill" d="M0,52 C240,30 480,74 720,50 C960,26 1200,70 1440,46 L1440,96 L0,96 Z" />
-          <path class="strata-path" d="M0,52 C240,30 480,74 720,50 C960,26 1200,70 1440,46" />
-        </svg>
-        <span class="strata-chip"><i class="fas fa-caret-down"></i> 1,700 ft · Workflow</span>
-      </div>
+      <!-- Product views: start with the instrument, then choose a workflow. -->
+      <section id="showcase" class="showcase showcase-workbench">
+        <div class="container container-wide">
+          <div class="showcase-heading">
+            <div>
+              <div class="eyebrow reveal"><i class="fas fa-images"></i> Inside LithoQuant</div>
+              <h2 class="reveal">One workspace. Every layer of the well.</h2>
+            </div>
+            <p class="reveal">
+              Explore the real interface—from multi-track log interpretation to calculations
+              and geomechanics.
+            </p>
+          </div>
+
+          <div class="showcase-layout">
+            <div class="showcase-viewer reveal">
+              <div class="viewer-frame" id="viewer-frame" data-lightbox>
+                <img
+                  id="viewer-img"
+                  src="assets/images/screenshots/track-display.jpeg"
+                  alt="LithoQuant multi-track log display for Well A-011"
+                />
+                <button class="viewer-expand" aria-label="Expand screenshot">
+                  <i class="fas fa-expand"></i>
+                </button>
+                <div class="viewer-caption">
+                  <span id="viewer-cap">Multi-track display · Well A-011</span>
+                  <span class="vc-tag">LithoQuant v1.1</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-tabs reveal" role="tablist" aria-label="Choose an application view">
+              <button class="showcase-tab active" data-tab="v1" data-img="assets/images/screenshots/track-display.jpeg" data-cap="Multi-track display · Well A-011">
+                <span class="st-index">01</span><span class="st-body"><h4>Log display</h4><p>Tracks, scales, and crossover shading</p></span>
+              </button>
+              <button class="showcase-tab" data-tab="v2" data-img="assets/images/screenshots/petrophysical-calculation.png" data-cap="Petrophysical calculations · audited">
+                <span class="st-index">02</span><span class="st-body"><h4>Calculations</h4><p>Porosity, saturation, permeability</p></span>
+              </button>
+              <button class="showcase-tab" data-tab="v3" data-img="assets/images/screenshots/crossplot.jpeg" data-cap="Crossplot analysis · QC">
+                <span class="st-index">03</span><span class="st-body"><h4>Crossplots</h4><p>Lithology and quality control</p></span>
+              </button>
+              <button class="showcase-tab" data-tab="v4" data-img="assets/images/screenshots/alltrack.png" data-cap="All tracks · 5-track display · 1:5000">
+                <span class="st-index">04</span><span class="st-body"><h4>Five-track overview</h4><p>Compare key curves together</p></span>
+              </button>
+              <button class="showcase-tab" data-tab="v5" data-img="assets/images/screenshots/porepress.png" data-cap="Pore pressure · all methods · TVD vs pressure">
+                <span class="st-index">05</span><span class="st-body"><h4>Pore pressure</h4><p>Multiple methods and calibration</p></span>
+              </button>
+              <button class="showcase-tab" data-tab="v6" data-img="assets/images/screenshots/stresses.png" data-cap="Stresses · gradient and effective stress">
+                <span class="st-index">06</span><span class="st-body"><h4>Stress analysis</h4><p>Gradients and faulting regimes</p></span>
+              </button>
+              <button class="showcase-tab" data-tab="v7" data-img="assets/images/screenshots/safemudwindow.png" data-cap="Mud weight window · TVD vs pressure">
+                <span class="st-index">07</span><span class="st-body"><h4>Mud-weight window</h4><p>See the safe operating range</p></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- ================= WORKFLOW ================= -->
       <section id="workflow">
         <div class="container">
-          <div class="section-head">
-            <div class="eyebrow reveal"><i class="fas fa-caret-down"></i> One straight line</div>
-            <h2 class="reveal">Four steps. No detours.</h2>
-            <p class="reveal">
-              A real sequence, not a feature maze - each stage hands off cleanly to the next,
-              and the audit trail follows you all the way down.
-            </p>
-          </div>
-          <div class="workflow-grid">
+          <div class="workflow-layout">
+            <div class="workflow-overview">
+              <div class="eyebrow reveal"><i class="fas fa-route"></i> A connected workflow</div>
+              <h2 class="reveal">The work moves forward. Your context stays with it.</h2>
+              <p class="reveal">
+                Go from raw LAS data to a decision-ready handoff without rebuilding the work
+                in a different tool at every step.
+              </p>
+              <a class="link-arrow reveal" href="#features">Explore the capabilities <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="workflow-grid">
             <article class="step-card reveal">
               <div class="step-num">01</div>
               <h3>Load</h3>
@@ -239,6 +270,7 @@
               <p>Export LAS, Excel, CSV, ASCII, or PDF with the audit trail attached. Hand off clean.</p>
               <span class="step-meta">5 export formats</span>
             </article>
+            </div>
           </div>
         </div>
       </section>
@@ -247,11 +279,11 @@
       <section id="features" class="features">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow reveal"><i class="fas fa-caret-down"></i> 3,200 ft · Capabilities</div>
-            <h2 class="reveal">Three formations. Twelve tools.</h2>
+            <div class="eyebrow reveal"><i class="fas fa-layer-group"></i> Capabilities</div>
+            <h2 class="reveal">A complete well-log analysis workspace.</h2>
             <p class="reveal">
-              Grouped by how you actually work - core petrophysics, scale and sharing, and the
-              science at the limit. Hover any tool to see why it earns its place.
+              Bring visualization, petrophysical calculations, quality control, and advanced
+              subsurface workflows together in one desktop application.
             </p>
           </div>
 
@@ -261,7 +293,7 @@
               <div class="pillar-header">
                 <div class="pillar-glyph"><i class="fas fa-layer-group"></i></div>
                 <div>
-                  <span class="pillar-kicker">Upper formation</span>
+                  <span class="pillar-kicker">Interpretation essentials</span>
                   <h3>Core Petrophysics</h3>
                   <p>From raw logs to trusted curves - every calculation audited.</p>
                 </div>
@@ -303,7 +335,7 @@
               <div class="pillar-header">
                 <div class="pillar-glyph"><i class="fas fa-diagram-project"></i></div>
                 <div>
-                  <span class="pillar-kicker">Middle formation</span>
+                  <span class="pillar-kicker">Project workflows</span>
                   <h3>Scale &amp; Share</h3>
                   <p>One well or a whole field - your project, your way.</p>
                 </div>
@@ -345,7 +377,7 @@
               <div class="pillar-header">
                 <div class="pillar-glyph"><i class="fas fa-atom"></i></div>
                 <div>
-                  <span class="pillar-kicker">Basement</span>
+                  <span class="pillar-kicker">Advanced analysis</span>
                   <h3>Science at the Limit</h3>
                   <p>Where petrophysics meets drilling and geomechanics - live.</p>
                 </div>
@@ -385,113 +417,13 @@
         </div>
       </section>
 
-      <div class="strata" aria-hidden="true">
-        <svg viewBox="0 0 1440 96" preserveAspectRatio="none">
-          <path class="strata-fill" d="M0,44 C260,68 520,26 760,52 C1000,78 1220,34 1440,54 L1440,96 L0,96 Z" />
-          <path class="strata-path" d="M0,44 C260,68 520,26 760,52 C1000,78 1220,34 1440,54" />
-        </svg>
-        <span class="strata-chip"><i class="fas fa-caret-down"></i> 5,400 ft · The instrument</span>
-      </div>
-
-      <!-- ================= SHOWCASE ================= -->
-      <section id="showcase" class="showcase">
-        <div class="container container-wide">
-          <div class="section-head">
-            <div class="eyebrow reveal"><i class="fas fa-caret-down"></i> Inside the app</div>
-            <h2 class="reveal">An instrument, not a dashboard.</h2>
-            <p class="reveal">
-              Every panel earns its pixels. Pick a station below to see the interface at work -
-              from first track to mud-weight window.
-            </p>
-          </div>
-
-          <div class="showcase-layout">
-            <div class="showcase-tabs reveal reveal-left" role="tablist" aria-label="App views">
-              <button class="showcase-tab active" data-tab="v1" data-img="assets/images/screenshots/track-display.jpeg" data-cap="Multi-track display · Well A-011">
-                <span class="st-index">01</span>
-                <span class="st-body">
-                  <h4>Multi-Track Log Display</h4>
-                  <p>Drag-and-drop curves, custom grids and scales, crossover shading.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-              <button class="showcase-tab" data-tab="v2" data-img="assets/images/screenshots/petrophysical-calculation.png" data-cap="Petrophysical calculations · audited">
-                <span class="st-index">02</span>
-                <span class="st-body">
-                  <h4>Petrophysical Calculations</h4>
-                  <p>Vshale, porosity, saturation, permeability - multiple methods each.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-              <button class="showcase-tab" data-tab="v3" data-img="assets/images/screenshots/crossplot.jpeg" data-cap="Crossplot analysis · QC">
-                <span class="st-index">03</span>
-                <span class="st-body">
-                  <h4>Crossplot Analysis</h4>
-                  <p>Interactive crossplots for lithology ID and log quality control.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-              <button class="showcase-tab" data-tab="v4" data-img="assets/images/screenshots/alltrack.png" data-cap="All tracks · 5-track display · 1:5000">
-                <span class="st-index">04</span>
-                <span class="st-body">
-                  <h4>Five-Track Overview</h4>
-                  <p>Depth, pore pressure, RHOZ/NPHI, resistivity, GR and DTCO in one view.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-              <button class="showcase-tab" data-tab="v5" data-img="assets/images/screenshots/porepress.png" data-cap="Pore pressure · all methods · TVD vs pressure">
-                <span class="st-index">05</span>
-                <span class="st-body">
-                  <h4>Pore Pressure - All Methods</h4>
-                  <p>Hydrostatic, Eaton sonic, equivalent depth and Tau with MDT calibration.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-              <button class="showcase-tab" data-tab="v6" data-img="assets/images/screenshots/stresses.png" data-cap="Stresses · gradient and effective stress">
-                <span class="st-index">06</span>
-                <span class="st-body">
-                  <h4>Horizontal &amp; Effective Stresses</h4>
-                  <p>Stress gradients in ppg EMW with faulting regime identification.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-              <button class="showcase-tab" data-tab="v7" data-img="assets/images/screenshots/safemudwindow.png" data-cap="Mud weight window · TVD vs pressure">
-                <span class="st-index">07</span>
-                <span class="st-body">
-                  <h4>Mud Weight Window</h4>
-                  <p>Pore pressure to fracture gradient with the safe operating window.</p>
-                </span>
-                <i class="fas fa-arrow-right st-arrow"></i>
-              </button>
-            </div>
-
-            <div class="showcase-viewer reveal reveal-right">
-              <div class="viewer-frame" id="viewer-frame" data-lightbox>
-                <img
-                  id="viewer-img"
-                  src="assets/images/screenshots/track-display.jpeg"
-                  alt="Multi-Track Log Display"
-                />
-                <button class="viewer-expand" aria-label="Expand screenshot">
-                  <i class="fas fa-expand"></i>
-                </button>
-                <div class="viewer-caption">
-                  <span id="viewer-cap">Multi-track display · Well A-011</span>
-                  <span class="vc-tag">LithoQuant v1.1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- ================= AUDIENCE ================= -->
       <section id="audience">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow reveal"><i class="fas fa-caret-down"></i> 7,600 ft · Who it serves</div>
-            <h2 class="reveal">Built for the field, the lab, and the classroom.</h2>
-            <p class="reveal">One instrument, three kinds of descent.</p>
+            <div class="eyebrow reveal"><i class="fas fa-users"></i> Who it serves</div>
+            <h2 class="reveal">For industry, academia, and research.</h2>
+            <p class="reveal">A practical toolkit for the people working with subsurface data.</p>
           </div>
           <div class="audience-grid">
             <article class="audience-card reveal">
@@ -510,7 +442,7 @@
               <p>Teach petrophysics with a real instrument, not slide rules. Academic licenses keep classrooms fully equipped.</p>
               <ul>
                 <li><i class="fas fa-caret-right"></i> Free academic licensing</li>
-                <li><i class="fas fa-caret-right"></i> Gentle learning curve, pro depth</li>
+                <li><i class="fas fa-caret-right"></i> Easy to learn, built for professional analysis</li>
                 <li><i class="fas fa-caret-right"></i> Developed inside a university</li>
               </ul>
             </article>
@@ -532,10 +464,10 @@
       <section id="licensing" class="licensing">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow sand reveal"><i class="fas fa-tag"></i> 9,800 ft · Licensing</div>
-            <h2 class="reveal">A license for every kind of explorer.</h2>
+            <div class="eyebrow sand reveal"><i class="fas fa-tag"></i> Licensing</div>
+            <h2 class="reveal">Flexible licensing for every team.</h2>
             <p class="reveal">
-              Straightforward terms, honest pricing - talk to us and we will find the right fit.
+              Talk to us about a trial, individual, corporate, or academic license.
               Every license includes the full feature set.
             </p>
           </div>
@@ -596,29 +528,21 @@
         </div>
       </section>
 
-      <div class="strata" aria-hidden="true">
-        <svg viewBox="0 0 1440 96" preserveAspectRatio="none">
-          <path class="strata-fill" d="M0,58 C220,34 460,70 720,46 C980,22 1220,66 1440,42 L1440,96 L0,96 Z" />
-          <path class="strata-path" d="M0,58 C220,34 460,70 720,46 C980,22 1220,66 1440,42" />
-        </svg>
-        <span class="strata-chip"><i class="fas fa-caret-down"></i> 12,200 ft · Origin</span>
-      </div>
-
       <!-- ================= ABOUT ================= -->
       <section id="about">
         <div class="container">
           <div class="about-grid">
             <div class="about-copy">
               <div class="eyebrow reveal"><i class="fas fa-caret-down"></i> Origin</div>
-              <h2 class="reveal">Born in a geophysics department, raised on real wells.</h2>
+              <h2 class="reveal">Developed at ITS, informed by real workflows.</h2>
               <p class="reveal">
                 LithoQuant is developed by students and lecturers at Geophysical Engineering,
                 Institut Teknologi Sepuluh Nopember - with scientific advisors from
                 petrophysics, seismology, and industry practice.
               </p>
               <p class="reveal">
-                The result is a rare thing: professional-grade analysis software that stays
-                approachable, priced for education and enterprise alike.
+                The result is professional petrophysical software designed to support both
+                education and industry analysis.
               </p>
               <div class="about-meta reveal">
                 <span class="meta-chip"><i class="fas fa-shield-halved"></i> SHA-256 audit trail</span>
@@ -663,27 +587,6 @@
                   <span>Software Debugger</span>
                 </div>
               </div>
-              <div class="team-mini">
-                <img class="avatar" src="assets/images/team/Ardian.jpeg" alt="Ardian Muhammad Andi Ghifary" loading="lazy" />
-                <div>
-                  <h4>Ardian Muhammad Andi Ghifary</h4>
-                  <span>Software Debugger</span>
-                </div>
-              </div>
-              <div class="team-mini">
-                <img class="avatar" src="assets/images/team/Alya.jpg" alt="Alya Amanda Hasnah" loading="lazy" />
-                <div>
-                  <h4>Alya Amanda Hasnah</h4>
-                  <span>Software Debugger</span>
-                </div>
-              </div>
-              <div class="team-mini">
-                <img class="avatar" src="assets/images/team/Aziz.jpeg" alt="Abdul Azziz" loading="lazy" />
-                <div>
-                  <h4>Abdul Azziz</h4>
-                  <span>Software Debugger</span>
-                </div>
-              </div>
               <div class="about-cta">
                 <a href="developer.html" class="link-arrow">Meet the full team <i class="fas fa-arrow-right"></i></a>
               </div>
@@ -697,7 +600,7 @@
         <div class="container">
           <div class="cta-panel reveal reveal-scale">
             <div class="bg-contours" aria-hidden="true"></div>
-            <div class="eyebrow sand reveal"><i class="fas fa-caret-down"></i> 14,600 ft · Total depth</div>
+            <div class="eyebrow sand reveal"><i class="fas fa-arrow-right"></i> Get started</div>
             <h2 class="reveal">See your own wells in LithoQuant.</h2>
             <p class="reveal">
               Book a free demo and consultation - bring a real LAS file and we will take it
@@ -774,30 +677,22 @@
         </div>
         <div class="footer-bottom">
           <p>&copy; 2024-2026 LithoQuant. All rights reserved.</p>
-          <span class="fb-depth"><i class="fas fa-caret-down"></i> Total depth 15,000 ft - you made it</span>
+          <span class="fb-tagline"><i class="fas fa-arrow-up"></i> From well logs to trusted decisions</span>
         </div>
       </div>
     </footer>
 
-    <!-- Depth rail (signature) -->
-    <div class="depth-rail" id="depth-rail" aria-hidden="true">
-      <span class="rail-caps">SURFACE</span>
-      <div class="rail-track"><div class="rail-fill"></div></div>
-      <span class="rail-caps">TD</span>
-      <span class="rail-readout">0 FT</span>
-    </div>
-
-    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div id="lightbox" class="lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Image preview">
       <button class="lightbox-close" aria-label="Close preview"><i class="fas fa-times"></i></button>
       <img alt="Preview" />
     </div>
     <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     <div class="comfort-bar">
-      <button id="comfort-toggle" class="comfort-btn" aria-pressed="false" title="Reduce motion">
-        <i class="fas fa-leaf"></i> <span>Calm</span>
+      <button id="comfort-toggle" class="comfort-btn" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion">
+        <i class="fas fa-leaf" aria-hidden="true"></i> <span>Reduce motion</span>
       </button>
     </div>
 
-    <script src="assets/js/script.js?v=20260826b"></script>
+    <script src="assets/js/script.js?v=20261027-ui2"></script>
   </body>
 </html>

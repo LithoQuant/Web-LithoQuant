@@ -2,18 +2,18 @@
    Sub-pages - shared page header, gallery, news, developer
    ============================================================ */
 
-/* - Page header: descending banner - */
+/* - Page header - */
 .page-header {
   position: relative;
   padding: clamp(150px, 17vh, 200px) 0 clamp(40px, 5vw, 64px);
   overflow: hidden;
   background:
-    radial-gradient(ellipse 100% 90% at 50% -20%, rgba(14, 89, 86, 0.3), transparent 60%),
-    linear-gradient(180deg, var(--abyss-2), var(--abyss));
+    radial-gradient(ellipse 100% 90% at 50% -20%, rgba(8, 120, 111, 0.08), transparent 60%),
+    linear-gradient(180deg, #fff, var(--abyss));
   text-align: center;
 }
 .page-header .bg-contours {
-  opacity: 0.7;
+  opacity: 0.4;
 }
 .page-header h1 {
   font-size: clamp(2.4rem, 5.4vw, 3.9rem);
@@ -68,8 +68,8 @@
     box-shadow 0.45s var(--ease-out);
 }
 .gallery-item:hover {
-  transform: translateY(-8px);
-  border-color: rgba(53, 196, 181, 0.4);
+  transform: translateY(-4px);
+  border-color: rgba(8, 120, 111, 0.24);
   box-shadow: var(--shadow-lg);
 }
 .gallery-item img {
@@ -86,7 +86,7 @@
   position: absolute;
   inset: auto 0 0 0;
   padding: 44px 24px 22px;
-  background: linear-gradient(180deg, transparent, rgba(5, 12, 23, 0.92));
+  background: linear-gradient(180deg, transparent, rgba(10, 24, 24, 0.88));
   transform: translateY(8px);
   opacity: 0.96;
   transition: transform 0.45s var(--ease-out);
@@ -95,6 +95,7 @@
   transform: translateY(0);
 }
 .gallery-overlay h3 {
+  color: #fff;
   font-size: 1.2rem;
   margin-bottom: 4px;
 }
@@ -102,7 +103,7 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
-  color: var(--mist);
+  color: rgba(255, 255, 255, 0.78);
   text-transform: uppercase;
 }
 .gallery-overlay .g-zoom {
@@ -177,8 +178,8 @@
     box-shadow 0.4s var(--ease-out);
 }
 .news-item:hover {
-  transform: translateX(8px);
-  border-color: rgba(53, 196, 181, 0.35);
+  transform: translateX(3px);
+  border-color: rgba(8, 120, 111, 0.22);
   box-shadow: var(--shadow-md);
 }
 .news-item::before {
@@ -191,11 +192,11 @@
   border-radius: 50%;
   background: var(--abyss);
   border: 3px solid var(--teal-bright);
-  box-shadow: 0 0 0 4px rgba(53, 196, 181, 0.15);
+  box-shadow: 0 0 0 4px rgba(8, 120, 111, 0.1);
 }
 .news-item.latest::before {
   border-color: var(--sand-bright);
-  box-shadow: 0 0 0 4px rgba(201, 170, 99, 0.18);
+  box-shadow: 0 0 0 4px rgba(169, 130, 59, 0.12);
   animation: pulse-dot 2.4s ease-in-out infinite;
 }
 .news-meta {
@@ -221,6 +222,20 @@
 .news-item p {
   margin-bottom: 16px;
 }
+.course-poster {
+  max-width: 280px;
+  margin: 22px auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.course-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -228,19 +243,19 @@
 }
 .tag {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--teal-bright);
-  background: rgba(14, 89, 86, 0.16);
-  border: 1px solid rgba(53, 196, 181, 0.28);
+  background: rgba(8, 120, 111, 0.07);
+  border: 1px solid rgba(8, 120, 111, 0.15);
   padding: 4px 12px;
   border-radius: 100px;
 }
 .tag.sand {
   color: var(--sand-bright);
-  background: rgba(201, 170, 99, 0.1);
-  border-color: rgba(201, 170, 99, 0.3);
+  background: rgba(169, 130, 59, 0.08);
+  border-color: rgba(169, 130, 59, 0.2);
 }
 
 /* - newsletter - */
@@ -251,7 +266,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(ellipse 70% 100% at 50% 0%, rgba(14, 89, 86, 0.25), transparent 65%),
+    radial-gradient(ellipse 70% 100% at 50% 0%, rgba(8, 120, 111, 0.07), transparent 65%),
     var(--navy);
   padding: clamp(36px, 5vw, 52px);
 }
@@ -288,7 +303,7 @@
 .newsletter-form input:focus {
   outline: none;
   border-color: var(--teal-bright);
-  box-shadow: 0 0 0 4px rgba(53, 196, 181, 0.15);
+  box-shadow: 0 0 0 4px rgba(8, 120, 111, 0.1);
 }
 .newsletter-note {
   margin-top: 16px;
@@ -340,7 +355,7 @@
 .tab-btn.active {
   color: #fff;
   background: var(--teal);
-  border-color: var(--teal-bright);
+  border-color: var(--teal);
   box-shadow: var(--shadow-teal);
 }
 .tab-pane {
@@ -382,7 +397,7 @@
   padding: 34px 22px 28px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  background: linear-gradient(170deg, var(--navy), var(--abyss-2));
+  background: linear-gradient(170deg, var(--navy), #f5f8f7);
   overflow: hidden;
   transition:
     transform 0.4s var(--ease-out),
@@ -402,9 +417,9 @@
   transition: opacity 0.4s var(--ease-out);
 }
 .member-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(53, 196, 181, 0.35);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: rgba(8, 120, 111, 0.22);
+  box-shadow: var(--shadow-md);
 }
 .member-card:hover::before {
   opacity: 1;
@@ -505,7 +520,7 @@
   padding: 44px 38px 40px;
   border-radius: var(--radius-xl);
   border: 1px solid var(--line);
-  background: linear-gradient(170deg, var(--navy), var(--abyss-2));
+  background: linear-gradient(170deg, var(--navy), #f5f8f7);
   transition:
     transform 0.4s var(--ease-out),
     border-color 0.4s var(--ease-out),
@@ -514,8 +529,8 @@
 }
 .partner-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(201, 170, 99, 0.4);
-  box-shadow: var(--shadow-lg);
+  border-color: rgba(169, 130, 59, 0.3);
+  box-shadow: var(--shadow-md);
 }
 .partner-logo {
   display: flex;
@@ -528,7 +543,7 @@
   border-radius: var(--radius-lg);
   padding: 24px 36px;
   overflow: hidden;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(20, 50, 46, 0.1);
   transition: transform 0.4s var(--ease-spring);
   box-sizing: border-box;
 }

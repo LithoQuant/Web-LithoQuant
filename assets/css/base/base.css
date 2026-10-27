@@ -35,7 +35,7 @@ body {
 
 /* - Selection - */
 ::selection {
-  background: rgba(14, 89, 86, 0.65);
+  background: rgba(8, 120, 111, 0.2);
   color: var(--paper);
 }
 
@@ -47,7 +47,7 @@ body {
   background: var(--abyss);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--navy-3);
+  background: #c9d5d1;
   border-radius: 8px;
   border: 2px solid var(--abyss);
 }
@@ -57,7 +57,7 @@ body {
 
 /* - Focus - */
 :focus-visible {
-  outline: 2px solid var(--teal-bright);
+  outline: 3px solid var(--teal-bright);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -117,7 +117,7 @@ a {
   transition: color 0.25s var(--ease-out);
 }
 a:hover {
-  color: var(--sand-bright);
+  color: var(--teal-deep);
 }
 
 img {
@@ -159,7 +159,7 @@ em {
 
 section {
   position: relative;
-  padding: clamp(72px, 9vw, 128px) 0;
+  padding: clamp(60px, 7vw, 104px) 0;
 }
 
 .section-head {
@@ -184,11 +184,11 @@ section {
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--teal-bright);
+  color: var(--teal);
   padding: 8px 16px;
-  border: 1px solid rgba(53, 196, 181, 0.25);
+  border: 1px solid rgba(8, 120, 111, 0.18);
   border-radius: 100px;
-  background: rgba(14, 89, 86, 0.12);
+  background: rgba(8, 120, 111, 0.055);
   margin-bottom: 22px;
 }
 .eyebrow .fa-caret-down {
@@ -197,8 +197,8 @@ section {
 }
 .eyebrow.sand {
   color: var(--sand-bright);
-  border-color: rgba(201, 170, 99, 0.3);
-  background: rgba(201, 170, 99, 0.08);
+  border-color: rgba(169, 130, 59, 0.2);
+  background: rgba(169, 130, 59, 0.07);
 }
 .eyebrow.plain {
   border: none;
@@ -214,51 +214,6 @@ section {
   50% {
     transform: translateY(3px);
   }
-}
-
-/* - Stratigraphic divider: sections as formation boundaries - */
-.strata {
-  position: relative;
-  height: 96px;
-  overflow: hidden;
-  pointer-events: none;
-}
-.strata svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.strata .strata-path {
-  fill: none;
-  stroke: var(--line-strong);
-  stroke-width: 1.5;
-}
-.strata .strata-fill {
-  fill: rgba(14, 89, 86, 0.05);
-}
-.strata-chip {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--sand-bright);
-  background: var(--abyss);
-  border: 1px solid var(--line-strong);
-  padding: 7px 16px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.strata-chip i {
-  color: var(--teal-bright);
-  font-size: 0.6rem;
 }
 
 /* ============================================================
@@ -330,7 +285,7 @@ section {
   color: #fff;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 16px 54px rgba(53, 196, 181, 0.4);
+    0 12px 34px rgba(8, 120, 111, 0.22);
 }
 .btn-primary:hover i {
   transform: translateX(3px);
@@ -346,15 +301,14 @@ section {
 }
 
 .btn-ghost {
-  background: rgba(10, 26, 51, 0.4);
+  background: rgba(255, 255, 255, 0.8);
   color: var(--paper);
   border-color: var(--line-strong);
-  backdrop-filter: blur(6px);
 }
 .btn-ghost:hover {
-  color: var(--teal-bright);
-  border-color: rgba(53, 196, 181, 0.5);
-  background: rgba(14, 89, 86, 0.15);
+  color: var(--teal-deep);
+  border-color: rgba(8, 120, 111, 0.32);
+  background: #eef7f5;
 }
 .btn-ghost:hover i {
   transform: translateX(3px);
@@ -415,8 +369,8 @@ section {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(154, 169, 189, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(154, 169, 189, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(29, 82, 75, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 82, 75, 0.035) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 30%, transparent 75%);
@@ -426,7 +380,7 @@ section {
 .bg-contours {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='700' viewBox='0 0 900 700'%3E%3Cg fill='none' stroke='%239aa9bd' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M-50 520 C 120 420 260 560 420 470 S 700 380 950 460'/%3E%3Cpath d='M-50 480 C 120 380 260 520 420 430 S 700 340 950 420'/%3E%3Cpath d='M-50 440 C 120 340 260 480 420 390 S 700 300 950 380'/%3E%3Cpath d='M-50 400 C 130 310 250 440 430 350 S 690 260 950 340'/%3E%3Cpath d='M-50 360 C 140 280 240 400 440 310 S 680 220 950 300'/%3E%3Cpath d='M-50 320 C 150 250 230 360 450 270 S 670 180 950 260'/%3E%3Cpath d='M-50 280 C 160 220 220 320 460 230 S 660 140 950 220'/%3E%3Cpath d='M-50 240 C 170 190 210 280 470 190 S 650 100 950 180'/%3E%3Cpath d='M-50 200 C 180 160 200 240 480 150 S 640 60 950 140'/%3E%3Cpath d='M-50 160 C 190 130 190 200 490 110 S 630 20 950 100'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='700' viewBox='0 0 900 700'%3E%3Cg fill='none' stroke='%23145a55' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M-50 520 C 120 420 260 560 420 470 S 700 380 950 460'/%3E%3Cpath d='M-50 480 C 120 380 260 520 420 430 S 700 340 950 420'/%3E%3Cpath d='M-50 440 C 120 340 260 480 420 390 S 700 300 950 380'/%3E%3Cpath d='M-50 400 C 130 310 250 440 430 350 S 690 260 950 340'/%3E%3Cpath d='M-50 360 C 140 280 240 400 440 310 S 680 220 950 300'/%3E%3Cpath d='M-50 320 C 150 250 230 360 450 270 S 670 180 950 260'/%3E%3Cpath d='M-50 280 C 160 220 220 320 460 230 S 660 140 950 220'/%3E%3Cpath d='M-50 240 C 170 190 210 280 470 190 S 650 100 950 180'/%3E%3Cpath d='M-50 200 C 180 160 200 240 480 150 S 640 60 950 140'/%3E%3Cpath d='M-50 160 C 190 130 190 200 490 110 S 630 20 950 100'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 900px 700px;
   pointer-events: none;
 }
@@ -448,9 +402,6 @@ html[lang] .calm-target {
   animation-duration: 0.001s !important;
   animation-iteration-count: 1 !important;
   transition-duration: 0.15s !important;
-}
-.calm .ticker-track {
-  animation: none !important;
 }
 .calm .reveal {
   opacity: 1 !important;
